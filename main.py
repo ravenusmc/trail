@@ -45,6 +45,7 @@ def characterSelection():
   elif choice == 4:
     characterDifferences()
 
+#This is where the player will establish the names of all of the people in their party including their own.
 def characterNames(choice):
   print("\033c")
   name = input("What is the first name of the wagon leader? ")
@@ -63,7 +64,11 @@ def characterNames(choice):
   personThree = Human(name)
   name = input("Please enter a name: ")
   personFour = Human(name)
+  print("Jumping back to 1848!")
+  monthSelection(banker, personOne, personTwo, personThree, personFour)
 
+def monthSelection():
+  print("\033c")
 
 ####### NON ESSENTIAL FUNCTIONS HERE ##########
 
