@@ -28,7 +28,8 @@ def quit():
   print("\033c")
   print("Well, hopefully you will like to travel the trail one day!")
   print("Be sure to always study history!")
-  print("Have a great day!")
+  input("Have a great day! (PRESS ENTER TO EXIT) ")
+  exit()
 
 #This function will tell the user where to find more information about the Oregan trail. 
 def learn():
