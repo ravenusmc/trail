@@ -21,11 +21,28 @@ def main():
   elif choice == 3:
     quit()
 
+#This function is where you will select the character that you want to be. 
+#The banker is easy, carpenter is medium and the farmer is hard. 
 def characterSelection():
   print("\033c")
   print("{__________________________________}")
   print("Many kinds of people made the trip to Oregon.")
   print("You may: ")
+  print("1. Be a baner from Boston")
+  print("2. Be a Carpenter from Ohio")
+  print("3. Be a farmer from Illinois")
+  print("4. Find out the differences between these choices")
+  choice = int(input("What is your choice? "))
+  while not characterValid(choice):
+    choice = int(input("What is your choice? "))
+  if choice == 1:
+    banker()
+  elif choice == 2:
+    carpenter()
+  elif choice == 3:
+    farmer()
+  elif choice == 4:
+    characterDifferences()
 
 
 
@@ -51,6 +68,14 @@ def learn():
   print("Take that Settlers of Cataan!!!")
   print("(I actually really like Settlers of Cataan)")
   print('\n')
+  menuFunc()
+
+def characterDifferences():
+  print("\033c")
+  print("The main differences between the characters is the amount of money you will get.")
+  print("The banker gets the most, then the carpenter and finally the farmer.")
+  print("If you choose the banker you will also get the least amount of bonus points at the end.")
+  print("Basically, the banker is easy, carpenter is medium and the farmer is hard.")
   menuFunc()
 
 def menuFunc():
