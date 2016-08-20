@@ -15,11 +15,19 @@ def main():
   while not mainValid(choice):
     choice = int(input("What is your choice? "))
   if choice == 1:
-    start()
+    characterSelection()
   elif choice == 2:
     learn()
   elif choice == 3:
     quit()
+
+def characterSelection():
+  print("\033c")
+  print("{__________________________________}")
+  print("Many kinds of people made the trip to Oregon.")
+  print("You may: ")
+
+
 
 ####### NON ESSENTIAL FUNCTIONS HERE ##########
 
