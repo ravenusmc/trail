@@ -1,4 +1,5 @@
 from valid import *
+from humanClass import *
 
 
 #This is the title screen of the game and introduces the user to it. This will also be the main menu of
@@ -28,7 +29,7 @@ def characterSelection():
   print("{__________________________________}")
   print("Many kinds of people made the trip to Oregon.")
   print("You may: ")
-  print("1. Be a baner from Boston")
+  print("1. Be a banker from Boston")
   print("2. Be a Carpenter from Ohio")
   print("3. Be a farmer from Illinois")
   print("4. Find out the differences between these choices")
@@ -36,14 +37,32 @@ def characterSelection():
   while not characterValid(choice):
     choice = int(input("What is your choice? "))
   if choice == 1:
-    banker()
+    characterNames(choice)
   elif choice == 2:
-    carpenter()
+    characterNames(choice)
   elif choice == 3:
-    farmer()
+    characterNames(choice)
   elif choice == 4:
     characterDifferences()
 
+def characterNames(choice):
+  print("\033c")
+  name = input("What is the first name of the wagon leader? ")
+  if choice == 1:
+    banker = Banker(name)
+  elif choice == 2:
+    carpenter = Carpenter(name)
+  elif choice == 3: 
+    farmer = Farmer(name)
+  print("What are the first names of the other members of your party?")
+  name = input("Please enter a name: ")
+  personOne = Human(name)
+  name = input("Please enter a name: ")
+  personTwo = Human(name)
+  name = input("Please enter a name: ")
+  personThree = Human(name)
+  name = input("Please enter a name: ")
+  personFour = Human(name)
 
 
 ####### NON ESSENTIAL FUNCTIONS HERE ##########
