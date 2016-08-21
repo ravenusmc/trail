@@ -70,8 +70,30 @@ def characterNames(choice):
   print("Jumping back to 1848!")
   monthSelection(leader, personOne, personTwo, personThree, personFour)
 
+#This function is where the player will select which month they want to start the journey in.
 def monthSelection(leader, personOne, personTwo, personThree, personFour):
   print("\033c")
+  print("It is 1848.")
+  print("Your jumping off place for Oregon is Independence, Missouri.")
+  print("You must decide which month to leave Indepence.")
+  print("1. March")
+  print("2. April")
+  print("3. May")
+  print("4. June")
+  print("5. July")
+  choice = int("What is your choice? ")
+  while not monthValid(choice):
+     choice = int("What is your choice? ")
+  if choice == 1:
+    month == "March" 
+  elif choice == 2:
+    month == "April"
+  elif choice == 3:
+    month == "May"
+  elif choice == 4:
+    month == "June"
+  elif choice == 5:
+    month == "July"
 
 ####### NON ESSENTIAL FUNCTIONS HERE ##########
 
