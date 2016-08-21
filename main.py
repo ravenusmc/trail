@@ -50,24 +50,27 @@ def characterNames(choice):
   print("\033c")
   name = input("What is the first name of the wagon leader? ")
   if choice == 1:
-    banker = Banker(name)
+    leader = Human(name, "Banker")
+    leader.money = 2000
   elif choice == 2:
-    carpenter = Carpenter(name)
+    leader = Carpenter(name, "Carpenter")
+    leader.money = 1500
   elif choice == 3: 
-    farmer = Farmer(name)
+    leader = Farmer(name, "Farmer")
+    leader.money = 1000
   print("What are the first names of the other members of your party?")
   name = input("Please enter a name: ")
-  personOne = Human(name)
+  personOne = Human(name, "partyOne")
   name = input("Please enter a name: ")
-  personTwo = Human(name)
+  personTwo = Human(name, "partyTwo")
   name = input("Please enter a name: ")
-  personThree = Human(name)
+  personThree = Human(name, "partyThree")
   name = input("Please enter a name: ")
-  personFour = Human(name)
+  personFour = Human(name, "partyFour")
   print("Jumping back to 1848!")
-  monthSelection(banker, personOne, personTwo, personThree, personFour)
+  monthSelection(leader, personOne, personTwo, personThree, personFour)
 
-def monthSelection():
+def monthSelection(leader, personOne, personTwo, personThree, personFour):
   print("\033c")
 
 ####### NON ESSENTIAL FUNCTIONS HERE ##########

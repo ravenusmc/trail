@@ -1,22 +1,8 @@
 class Human():
 
-  def __init__(self, name):
+  def __init__(self, name, job):
     self.name = name 
+    self.job = job 
+    self.money = 0
+    self.life = 10
 
-class Banker(Human):
-
-  def __init__(self, name):
-    self.name = name
-    self.money = 2000
-
-class Carpenter(Human):
-
-  def __init__(self, name):
-    self.name = name
-    self.money = 1500
-
-class Farmer(Human):
-
-  def __init__(self, name):
-    self.name = name
-    self.money = 1000
