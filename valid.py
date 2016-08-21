@@ -1,3 +1,4 @@
+#Validations for the main file. 
 def mainValid(choice):
   if choice == 1 or choice == 2 or choice == 3:
     return True
@@ -11,8 +12,10 @@ def characterValid(choice):
     return False
 
 def monthValid(choice):
-  if choice == 1 or chocie == 2 or choice == 3 or choice == 4 or choice == 5:
+  if choice == 1 or choice == 2 or choice == 3 or choice == 4 or choice == 5:
     return True 
   else: 
     return False 
+
+## Validations for the store file. 
   

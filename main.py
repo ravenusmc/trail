@@ -1,5 +1,6 @@
 from valid import *
 from humanClass import *
+from store import *
 
 
 #This is the title screen of the game and introduces the user to it. This will also be the main menu of
@@ -73,6 +74,7 @@ def characterNames(choice):
 #This function is where the player will select which month they want to start the journey in.
 def monthSelection(leader, personOne, personTwo, personThree, personFour):
   print("\033c")
+  print("{__________________________________}")
   print("It is 1848.")
   print("Your jumping off place for Oregon is Independence, Missouri.")
   print("You must decide which month to leave Indepence.")
@@ -81,9 +83,10 @@ def monthSelection(leader, personOne, personTwo, personThree, personFour):
   print("3. May")
   print("4. June")
   print("5. July")
-  choice = int("What is your choice? ")
+  choice = int(input("What is your choice? "))
   while not monthValid(choice):
      choice = int("What is your choice? ")
+  month = ""
   if choice == 1:
     month == "March" 
   elif choice == 2:
@@ -94,6 +97,7 @@ def monthSelection(leader, personOne, personTwo, personThree, personFour):
     month == "June"
   elif choice == 5:
     month == "July"
+  storeGreeting(leader, personOne, personTwo, personThree, personFour, month)
 
 ####### NON ESSENTIAL FUNCTIONS HERE ##########
 
