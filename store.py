@@ -10,7 +10,7 @@ def storeGreeting(leader, personOne, personTwo, personThree, personFour, month):
   print(" - Clothing for both summer and winter")
   print(" - Plenty of food for the trip")
   print(" - Spare parts for your wagon")
-  input("Press enter to continue")
+  input("Press enter to continue ")
   storeMain(leader, personOne, personTwo, personThree, personFour, month)
 
 #This is the main menu screen which will keep track of all of the supplies that the player buys.
@@ -30,6 +30,22 @@ def storeMain(leader, personOne, personTwo, personThree, personFour, month):
   print("4. Spare Parts $" + str(spareTotal))
   print("Amount you have: $" + str(leader.money))
   choice = int(input("Which item would you like to buy? "))
+  if choice == 1:
+    oxen()
+
+def oxen():
+  print("\033c")
+  print("-----------------------------------------")
+  print("         Daniel's General Store          ") 
+  print("         Independence, Missouri          ")
+  print("-----------------------------------------")
+  print("There are 2 oxen in a yoke. I recommend at least 3 yoke.")
+  print("I charge $40 a yoke.")
+  yokeNumber = int(input("How man yoke do you want? "))
+  yokeCost = yokeNumber * 40
+  print("Bill so far: $" + str(yokeCost))
+  storeMain(leader, personOne, personTwo, personThree, personFour, month, yokeCost)
+
 
 
 
