@@ -30,4 +30,10 @@ def oxenValid(yokeNumber):
   else:
     return True
 
+def foodValid(foodNumber):
+  if foodNumber < 0:
+    return False
+  else:
+    return True
+
   

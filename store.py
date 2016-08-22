@@ -54,13 +54,28 @@ def oxen():
   print("There are 2 oxen in a yoke. I recommend at least 3 yoke.")
   print("I charge $40 a yoke.")
   print("Think carefully before you purchase. For all sales are final!")
-  yokeNumber = int(input("How man yoke do you want? "))
+  yokeNumber = int(input("How many yoke do you want? "))
   while not oxenValid(yokeNumber):
     print("Value must be between 1 and 10")
-    yokeNumber = int(input("How man yoke do you want? "))
+    yokeNumber = int(input("How many yoke do you want? "))
   oxenTotal = yokeNumber * 40
-  print("Bill so far: $" + str(oxenTotal))
   return oxenTotal
+
+def food():
+  print("\033c")
+  print("-----------------------------------------")
+  print("         Daniel's General Store          ") 
+  print("         Independence, Missouri          ")
+  print("-----------------------------------------")
+  print("I recommend taking at least 200 lbs of food / person.")
+  print("I sell bulk food for .20 cents a pound")
+  print("Think carefully before you purchase. For all sales are final!")
+  foodNumber = int(input("How many pounds of food do you want? "))
+  while not foodValid(foodNumber):
+    print("Value must be 0 or greater!")
+    foodNumber = int(input("How many pounds of food do you want? "))
+  foodTotal = foodNumber * .20
+  return foodTotal
 
 #A brief screen that will tell the player good luck once they exit the store. 
 def goodLuckScreen():
