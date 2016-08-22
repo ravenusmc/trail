@@ -97,7 +97,11 @@ def monthSelection(leader, personOne, personTwo, personThree, personFour):
     month == "June"
   elif choice == 5:
     month == "July"
-  storeGreeting(leader, personOne, personTwo, personThree, personFour, month)
+  oxenTotal = 0.00
+  foodTotal = 0.00
+  clothTotal = 0.00
+  spareTotal = 0.00
+  storeGreeting(leader, personOne, personTwo, personThree, personFour, month, oxenTotal, foodTotal, clothTotal, spareTotal)
 
 ####### NON ESSENTIAL FUNCTIONS HERE ##########
 
