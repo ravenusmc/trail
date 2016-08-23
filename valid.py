@@ -36,4 +36,39 @@ def foodValid(foodNumber):
   else:
     return True
 
+def clothValid(clothNumber):
+  if clothNumber < 0:
+    return False
+  else: 
+    return True 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   

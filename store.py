@@ -77,6 +77,23 @@ def food():
   foodTotal = foodNumber * .20
   return foodTotal
 
+def cloth():
+  print("\033c")
+  print("-----------------------------------------")
+  print("         Daniel's General Store          ") 
+  print("         Independence, Missouri          ")
+  print("-----------------------------------------")
+  print("You'll need warm clothing in the mountains.")
+  print("I recommend taking at least 2 sets of clothes per person.")
+  print("Each set is $10.00.")
+  clothNumber = int(input("How many sets of cloth do you want? "))
+  while not clothValid(clothNumber):
+    print("Value must be 0 or greater")
+    clothNumber = int(input("How many sets of cloth do you want? "))
+  clothTotal = clothNumber * 10
+  return clothTotal
+
+
 #A brief screen that will tell the player good luck once they exit the store. 
 def goodLuckScreen():
   print("\033c")
