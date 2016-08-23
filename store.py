@@ -15,11 +15,7 @@ def storeGreeting(leader, personOne, personTwo, personThree, personFour, month, 
 
 #This is the main menu screen which will keep track of all of the supplies that the player buys.
 def storeMain(leader, personOne, personTwo, personThree, personFour, month, oxenTotal, foodTotal, clothTotal, spareTotal):
-  print("\033c")
-  print("-----------------------------------------")
-  print("         Daniel's General Store          ") 
-  print("         Independence, Missouri          ")
-  print("-----------------------------------------")
+  storeGreeter()
   print("1. Oxen $" + str(oxenTotal))
   print("2. Food $" + str(foodTotal))
   print("3. Clothing $" + str(clothTotal))
@@ -47,11 +43,7 @@ def storeMain(leader, personOne, personTwo, personThree, personFour, month, oxen
 
 #This is the function that takes you to buy the required number of oxen for your journey.
 def oxen():
-  print("\033c")
-  print("-----------------------------------------")
-  print("         Daniel's General Store          ") 
-  print("         Independence, Missouri          ")
-  print("-----------------------------------------")
+  storeGreeter()
   print("There are 2 oxen in a yoke. I recommend at least 3 yoke.")
   print("I charge $40 a yoke.")
   print("Think carefully before you purchase. For all sales are final!")
@@ -63,11 +55,7 @@ def oxen():
   return oxenTotal
 
 def food():
-  print("\033c")
-  print("-----------------------------------------")
-  print("         Daniel's General Store          ") 
-  print("         Independence, Missouri          ")
-  print("-----------------------------------------")
+  storeGreeter()
   print("I recommend taking at least 200 lbs of food / person.")
   print("I sell bulk food for .20 cents a pound")
   print("Think carefully before you purchase. For all sales are final!")
@@ -79,11 +67,7 @@ def food():
   return foodTotal
 
 def cloth():
-  print("\033c")
-  print("-----------------------------------------")
-  print("         Daniel's General Store          ") 
-  print("         Independence, Missouri          ")
-  print("-----------------------------------------")
+  storeGreeter()
   print("You'll need warm clothing in the mountains.")
   print("I recommend taking at least 2 sets of clothes per person.")
   print("Each set is $10.00.")
@@ -95,11 +79,7 @@ def cloth():
   return clothTotal
 
 def spare():
-  print("\033c")
-  print("-----------------------------------------")
-  print("         Daniel's General Store          ") 
-  print("         Independence, Missouri          ")
-  print("-----------------------------------------")
+  storeGreeter()
   print("It's a good idea to have a few spare parts for your wagon.")
   print("Here are the prices: ")
   print("Wagon wheel - $10 each")
@@ -123,15 +103,21 @@ def spare():
   spareTotal = tongueTotal + axleTotal + wheelTotal
   return spareTotal
 
-
-
-
 #A brief screen that will tell the player good luck once they exit the store. 
 def goodLuckScreen():
   print("\033c")
   print("Well, then, you're ready to start. Good Luck!")
   print("The journey will be long and hard!")
   input("Press enter to continue ")
+
+##### Other Store Functions 
+
+def storeGreeter():
+  print("\033c")
+  print("-----------------------------------------")
+  print("         Daniel's General Store          ") 
+  print("         Independence, Missouri          ")
+  print("-----------------------------------------")
 
 
 
