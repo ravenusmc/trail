@@ -42,6 +42,24 @@ def clothValid(clothNumber):
   else: 
     return True 
 
+def wheelValid(wheel):
+  if wheel < 0:
+    return False 
+  else: 
+    return True 
+
+def axleValid(axle):
+  if axle < 0:
+    return False
+  else: 
+    return True
+
+def tongueValid(tongue):
+  if tongue < 0:
+    return False
+  else: 
+    return True
+
 
 
 

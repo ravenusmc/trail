@@ -93,6 +93,37 @@ def cloth():
   clothTotal = clothNumber * 10
   return clothTotal
 
+def spare():
+  print("\033c")
+  print("-----------------------------------------")
+  print("         Daniel's General Store          ") 
+  print("         Independence, Missouri          ")
+  print("-----------------------------------------")
+  print("It's a good idea to have a few spare parts for your wagon.")
+  print("Here are the prices: ")
+  print("Wagon wheel - $10 each")
+  print("Wagon axle - $10 each")
+  print("wagon tongue - $10")
+  wheel = int(input("How many wagon wheels? "))
+  while not wheelValid(wheel):
+    print("Value must be 0 or greater!")
+    wheel = int(input("How many wagon wheels? "))
+  wheelTotal = wheel * 10
+  axle = int(input("How many wagon axle's? "))
+  while not axleValid(axle):
+    print("value must be 0 or greater!")
+    axle = int(input("How many wagon axle's? "))
+  axleTotal = axle * 10
+  tongue = int(input("How many wagon tongue's? "))
+  while not tongueValid(tongue):
+    print("Value must be 0 or greater!")
+    tongue = int(input("How many wagon tongue's? "))
+  tongueTotal = tongue * 10 
+  spareTotal = tongueTotal + axleTotal + wheelTotal
+  return spareTotal
+
+
+
 
 #A brief screen that will tell the player good luck once they exit the store. 
 def goodLuckScreen():
