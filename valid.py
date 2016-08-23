@@ -25,7 +25,7 @@ def storemainValid(choice):
     return False 
 
 def oxenValid(yokeNumber):
-  if yokeNumber < 0 or yokeNumber > 10:
+  if yokeNumber < 0 or yokeNumber > 5:
     return False
   else:
     return True

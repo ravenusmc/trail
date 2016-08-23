@@ -24,6 +24,7 @@ def storeMain(leader, personOne, personTwo, personThree, personFour, month, oxen
   print("2. Food $" + str(foodTotal))
   print("3. Clothing $" + str(clothTotal))
   print("4. Spare Parts $" + str(spareTotal))
+  print("5. Start Your Journey!")
   leader.money = leader.money - (oxenTotal + foodTotal + clothTotal + spareTotal)
   print("Amount you have: $" + str(leader.money))
   choice = int(input("Which item would you like to buy? "))
@@ -56,7 +57,7 @@ def oxen():
   print("Think carefully before you purchase. For all sales are final!")
   yokeNumber = int(input("How many yoke do you want? "))
   while not oxenValid(yokeNumber):
-    print("Value must be between 1 and 10")
+    print("Value must be between 1 and 5")
     yokeNumber = int(input("How many yoke do you want? "))
   oxenTotal = yokeNumber * 40
   return oxenTotal
