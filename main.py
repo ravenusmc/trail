@@ -54,10 +54,10 @@ def characterNames(choice):
     leader = Human(name, "Banker")
     leader.money = 2000
   elif choice == 2:
-    leader = Carpenter(name, "Carpenter")
+    leader = Human(name, "Carpenter")
     leader.money = 1500
   elif choice == 3: 
-    leader = Farmer(name, "Farmer")
+    leader = Human(name, "Farmer")
     leader.money = 1000
   print("What are the first names of the other members of your party?")
   name = input("Please enter a name: ")
