@@ -10,10 +10,13 @@ class Wagon():
     self.tongue = 0
     self.speed = 0
 
+  #I may need to think about placing the human objects into here?
   def move(self):
     self.speed = 1
     self.speed = self.speed * self.oxen
     print(self.speed)
+  
+  def 
     
 
 wagon = Wagon()
