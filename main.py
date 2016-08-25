@@ -1,5 +1,6 @@
 from valid import *
 from humanClass import *
+from wagon import Wagon
 from store import *
 
 
@@ -69,10 +70,11 @@ def characterNames(choice):
   name = input("Please enter a name: ")
   personFour = Human(name, "partyFour")
   print("Jumping back to 1848!")
-  monthSelection(leader, personOne, personTwo, personThree, personFour)
+  wagon = Wagon()
+  monthSelection(wagon, leader, personOne, personTwo, personThree, personFour)
 
 #This function is where the player will select which month they want to start the journey in.
-def monthSelection(leader, personOne, personTwo, personThree, personFour):
+def monthSelection(wagon, leader, personOne, personTwo, personThree, personFour):
   print("\033c")
   print("{__________________________________}")
   print("It is 1848.")
@@ -101,7 +103,7 @@ def monthSelection(leader, personOne, personTwo, personThree, personFour):
   foodTotal = 0.00
   clothTotal = 0.00
   spareTotal = 0.00
-  storeGreeting(leader, personOne, personTwo, personThree, personFour, month, oxenTotal, foodTotal, clothTotal, spareTotal)
+  storeGreeting(wagon, leader, personOne, personTwo, personThree, personFour, month, oxenTotal, foodTotal, clothTotal, spareTotal)
 
 ####### NON ESSENTIAL FUNCTIONS HERE ##########
 

@@ -16,9 +16,6 @@ class Wagon():
     self.speed = self.speed * self.oxen
     print(self.speed)
   
-  def 
-    
-
 wagon = Wagon()
 wagon.move()
 #Trail was 2000 miles long

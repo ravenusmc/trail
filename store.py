@@ -1,7 +1,7 @@
 from valid import *
 
 #This is the initial store greeting function. The user will learn here what they can buy. 
-def storeGreeting(leader, personOne, personTwo, personThree, personFour, month, oxenTotal, foodTotal, clothTotal, spareTotal):
+def storeGreeting(wagon, leader, personOne, personTwo, personThree, personFour, month, oxenTotal, foodTotal, clothTotal, spareTotal):
   print("\033c")
   print("{__________________________________}")
   print("Hello, I am Daniel.")
@@ -11,10 +11,10 @@ def storeGreeting(leader, personOne, personTwo, personThree, personFour, month, 
   print(" - Plenty of food for the trip")
   print(" - Spare parts for your wagon")
   input("Press enter to continue ")
-  storeMain(leader, personOne, personTwo, personThree, personFour, month, oxenTotal, foodTotal, clothTotal, spareTotal)
+  storeMain(wagon, leader, personOne, personTwo, personThree, personFour, month, oxenTotal, foodTotal, clothTotal, spareTotal)
 
 #This is the main menu screen which will keep track of all of the supplies that the player buys.
-def storeMain(leader, personOne, personTwo, personThree, personFour, month, oxenTotal, foodTotal, clothTotal, spareTotal):
+def storeMain(wagon, leader, personOne, personTwo, personThree, personFour, month, oxenTotal, foodTotal, clothTotal, spareTotal):
   storeGreeter()
   print("1. Oxen $" + str(oxenTotal))
   print("2. Food $" + str(foodTotal))
@@ -28,16 +28,16 @@ def storeMain(leader, personOne, personTwo, personThree, personFour, month, oxen
     choice = int(input("Which item would you like to buy? "))
   if choice == 1:
     oxenTotal = oxen()
-    storeMain(leader, personOne, personTwo, personThree, personFour, month, oxenTotal, foodTotal, clothTotal, spareTotal)
+    storeMain(wagon, leader, personOne, personTwo, personThree, personFour, month, oxenTotal, foodTotal, clothTotal, spareTotal)
   elif choice == 2:
     foodTotal = food()
-    storeMain(leader, personOne, personTwo, personThree, personFour, month, oxenTotal, foodTotal, clothTotal, spareTotal)
+    storeMain(wagon, leader, personOne, personTwo, personThree, personFour, month, oxenTotal, foodTotal, clothTotal, spareTotal)
   elif choice == 3:
     clothTotal = cloth()
-    storeMain(leader, personOne, personTwo, personThree, personFour, month, oxenTotal, foodTotal, clothTotal, spareTotal)
+    storeMain(wagon, leader, personOne, personTwo, personThree, personFour, month, oxenTotal, foodTotal, clothTotal, spareTotal)
   elif choice == 4:
     spareTotal = spare()
-    storeMain(leader, personOne, personTwo, personThree, personFour, month, oxenTotal, foodTotal, clothTotal, spareTotal)
+    storeMain(wagon, leader, personOne, personTwo, personThree, personFour, month, oxenTotal, foodTotal, clothTotal, spareTotal)
   elif choice == 5:
     goodLuckScreen()
 
