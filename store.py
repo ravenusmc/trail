@@ -21,13 +21,18 @@ def storeMain(wagon, leader, personOne, personTwo, personThree, personFour, mont
   print("3. Clothing $" + str(clothTotal))
   print("4. Spare Parts $" + str(spareTotal))
   print("5. Start Your Journey!")
+  print(leader.name)
+  print(wagon.oxen)
   leader.money = leader.money - (oxenTotal + foodTotal + clothTotal + spareTotal)
   print("Amount you have: $" + str(leader.money))
   choice = int(input("Which item would you like to buy? "))
   while not storemainValid(choice):
     choice = int(input("Which item would you like to buy? "))
   if choice == 1:
-    oxenTotal = oxen()
+    oxenTotal = oxen(wagon)
+    yokeNumber = oxenTotal / 40
+    wagon.oxen = int(yokeNumber * 2)
+    print(wagon.oxen)
     storeMain(wagon, leader, personOne, personTwo, personThree, personFour, month, oxenTotal, foodTotal, clothTotal, spareTotal)
   elif choice == 2:
     foodTotal = food()
@@ -42,7 +47,7 @@ def storeMain(wagon, leader, personOne, personTwo, personThree, personFour, mont
     goodLuckScreen()
 
 #This is the function that takes you to buy the required number of oxen for your journey.
-def oxen():
+def oxen(wagon):
   storeGreeter()
   print("There are 2 oxen in a yoke. I recommend at least 3 yoke.")
   print("I charge $40 a yoke.")
