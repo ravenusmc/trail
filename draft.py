@@ -1,21 +1,29 @@
-def testOne():
-  name = "Mike"
-  testTwo(name)
+import datetime
+# month = "April"
+# day = 1
 
-def testTwo(name):
-  num = 3
-  lastname = "Cuddy"
-  testThree(name, lastname)
-  testFour(name, lastname, num)
+# print(month, day, "1848")
 
-def testThree(name, lastname):
-  print(name)
-  print(lastname)
-  testFour(name, lastname)
+def calender(month):
+  months = ["March", "April", "May", "June", "July", "August"]
+  while True:
+    if month == "March":
 
-def testFour(name, lastname, num):
-  print(num)
-  print(name)
-  print(lastname)
 
-testOne()
+
+
+
+
+
+# test = int(datetime.datetime(1848, 4, 1).strftime('%Y%m%d'))
+# print(type(test))
+# print(test + 1)
+
+#This converts from Calender day to julian date. 
+# fmt = '%Y.%m.%d'
+# start = '1848.04.01'
+# dt = datetime.datetime.strptime(start, fmt)
+# tt = dt.timetuple()
+# print(tt.tm_yday)
+
+#Need to convert from Julian date back to calender date.

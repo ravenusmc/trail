@@ -1,4 +1,6 @@
 from valid import *
+from trail import *
+from pygame import mixer
 
 #This is the initial store greeting function. The user will learn here what they can buy. 
 def storeGreeting(wagon, leader, personOne, personTwo, personThree, personFour, month, oxenTotal, foodTotal, clothTotal, spareTotal):
@@ -21,9 +23,6 @@ def storeMain(wagon, leader, personOne, personTwo, personThree, personFour, mont
   print("3. Clothing $" + str(clothTotal))
   print("4. Spare Parts $" + str(spareTotal))
   print("5. Start Your Journey!")
-  print(wagon.wheel)
-  print(wagon.axle)
-  print(wagon.tongue)
   leader.money = leader.money - (oxenTotal + foodTotal + clothTotal + spareTotal)
   print("Amount you have: $" + str(leader.money))
   choice = int(input("Which item would you like to buy? "))
@@ -52,7 +51,7 @@ def storeMain(wagon, leader, personOne, personTwo, personThree, personFour, mont
     spareTotal = wheelTotal + axleTotal + tongueTotal
     storeMain(wagon, leader, personOne, personTwo, personThree, personFour, month, oxenTotal, foodTotal, clothTotal, spareTotal)
   elif choice == 5:
-    goodLuckScreen()
+    goodLuckScreen(wagon, leader, personOne, personTwo, personThree, personFour, month)
 
 #This is the function that takes you to buy the required number of oxen for your journey.
 def oxen():
@@ -126,11 +125,17 @@ def tongueSpare():
   return tongueTotal
 
 #A brief screen that will tell the player good luck once they exit the store. 
-def goodLuckScreen():
+def goodLuckScreen(wagon, leader, personOne, personTwo, personThree, personFour, month):
   print("\033c")
   print("Well, then, you're ready to start. Good Luck!")
   print("The journey will be long and hard!")
+  print("Your wagon is being loaded with supplies!")
+  # mixer.init()
+  # mixer.music.load('yankee_doodle.mp3')
+  # mixer.music.play()
   input("Press enter to continue ")
+  trailMenu(wagon, leader, personOne, personTwo, personThree, personFour, month)
+
 
 ##### Other Store Functions 
 
