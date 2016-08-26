@@ -38,6 +38,7 @@ def storeMain(wagon, leader, personOne, personTwo, personThree, personFour, mont
     storeMain(wagon, leader, personOne, personTwo, personThree, personFour, month, oxenTotal, foodTotal, clothTotal, spareTotal)
   elif choice == 3:
     clothTotal = cloth()
+    wagon.cloth = clothTotal / 10
     storeMain(wagon, leader, personOne, personTwo, personThree, personFour, month, oxenTotal, foodTotal, clothTotal, spareTotal)
   elif choice == 4:
     spareTotal = spare()
