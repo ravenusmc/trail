@@ -24,12 +24,13 @@ def trailMenu(wagon, leader, personOne, personTwo, personThree, personFour, mont
   if choice == 1:
     wagon.move()
   elif choice == 2:
-    checkSupplies(wagon)
+    checkSupplies(wagon, leader, personOne, personTwo, personThree, personFour, month)
   elif choice == 3:
-    changePace(wagon)
+    changePace(wagon, leader, personOne, personTwo, personThree, personFour, month)
 
 #This function takes the user to the supplies screen where they can see the level of their supplies. 
-def checkSupplies(wagon):
+def checkSupplies(wagon, leader, personOne, personTwo, personThree, personFour, month):
+  print("\033c")
   print("You have the following supplies on hand: ")
   print(wagon.oxen)
   print(wagon.food)
@@ -41,17 +42,25 @@ def checkSupplies(wagon):
   trailMenu(wagon, leader, personOne, personTwo, personThree, personFour, month)
 
 #This function will allow the user to change the pace of the wagon. 
-def changePace(wagon):
+def changePace(wagon, leader, personOne, personTwo, personThree, personFour, month):
+  print("\033c")
   print("Here you can change the speed of your wagon.")
   print("You currently have:", wagon.oxen, "oxen.")
-  yoke = wagon.oxen / 2 
   print("How many yokes, 2 oxen, do you want to take off or increase?")
+  print("Each yoke added increases your speed by 5 MPH up to 25 MPH")
   print("1. Increase speed")
   print("2. Decrease speed")
+  print(wagon.speed)
   choice = int(input("What is your choice? "))
   if choice == 1: 
-    
-  print()
+    speedUp = int(input("how many yoke's do you want to add, to your wagon? "))
+    wagon.speed = (speedUp * 5) + wagon.speed
+  elif choice == 2:
+    speedDown = int(input("how many yoke's do you want to take off your wagon? "))
+    wagon.speed = wagon.speed - (speedDown * 5)
+  print("Your new wagon speed is:", wagon.speed)
+  input("Press enter to return to the menu!")
+  trailMenu(wagon, leader, personOne, personTwo, personThree, personFour, month)
 
 
 

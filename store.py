@@ -32,6 +32,7 @@ def storeMain(wagon, leader, personOne, personTwo, personThree, personFour, mont
     oxenTotal = oxen()
     yokeNumber = oxenTotal / 40
     wagon.oxen = int(yokeNumber * 2)
+    wagon.speed = yokeNumber * 5 
     storeMain(wagon, leader, personOne, personTwo, personThree, personFour, month, oxenTotal, foodTotal, clothTotal, spareTotal)
   elif choice == 2:
     foodTotal = food()
