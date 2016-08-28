@@ -5,4 +5,5 @@ class Human():
     self.job = job 
     self.money = 0
     self.life = 10
+    self.ration = 2
 

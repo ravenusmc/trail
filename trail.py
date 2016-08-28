@@ -27,6 +27,9 @@ def trailMenu(wagon, leader, personOne, personTwo, personThree, personFour, mont
     checkSupplies(wagon, leader, personOne, personTwo, personThree, personFour, month)
   elif choice == 3:
     changePace(wagon, leader, personOne, personTwo, personThree, personFour, month)
+  elif choice == 4:
+    changeFood(wagon, leader, personOne, personTwo, personThree, personFour, month)
+
 
 #This function takes the user to the supplies screen where they can see the level of their supplies. 
 def checkSupplies(wagon, leader, personOne, personTwo, personThree, personFour, month):
@@ -68,6 +71,44 @@ def changePace(wagon, leader, personOne, personTwo, personThree, personFour, mon
   print("Your new wagon speed is:", wagon.speed)
   input("Press enter to return to the menu!")
   trailMenu(wagon, leader, personOne, personTwo, personThree, personFour, month)
+
+def changeFood(wagon, leader, personOne, personTwo, personThree, personFour, month):
+  print("\033c")
+  print("Here you can change the amount of food your group is eating")
+  print("What level do you want to make them at: ")
+  print("1. Meager")
+  print("2. Normal")
+  print("3. Tons")
+  choice = int(input("What is your choice? "))
+  if choice == 1:
+    print("Rations sent to meager levels!")
+    leader.ration = 1 
+    personOne.ration = 1 
+    personTwo.ration = 1
+    personThree.ration = 1
+    personFour.ration = 1
+    print(leader.ration)
+  elif choice == 2:
+    print("Rations sent to normal levels!")
+    leader.ration = 2
+    personOne.ration = 2 
+    personTwo.ration = 2
+    personThree.ration = 2
+    personFour.ration = 2
+    print(leader.ration)
+  elif choice == 3:
+    print("Rations sent to 'tons' level")
+    leader.ration = 3
+    personOne.ration = 3 
+    personTwo.ration = 3
+    personThree.ration = 3
+    personFour.ration = 3
+    print(leader.ration)
+  input("Press enter to return to the menu!")
+  trailMenu(wagon, leader, personOne, personTwo, personThree, personFour, month)
+
+
+
 
 
 
