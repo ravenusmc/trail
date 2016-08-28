@@ -6,8 +6,8 @@ def trailMenu(wagon, leader, personOne, personTwo, personThree, personFour, mont
   print("\033c")
   print("Weather: ")
   print("Health: ")
-  print("Pace: ")
-  print("Rations: ")
+  print("Pace: ", (wagon.oxen / 2)  * 5, "MPH")
+  print("Rations: ", leader.ration)
   print("Distance: ")
   print('\n')
   print("You may:")
@@ -72,6 +72,7 @@ def changePace(wagon, leader, personOne, personTwo, personThree, personFour, mon
   input("Press enter to return to the menu!")
   trailMenu(wagon, leader, personOne, personTwo, personThree, personFour, month)
 
+#This function will allow you to change the food levels for your party. 
 def changeFood(wagon, leader, personOne, personTwo, personThree, personFour, month):
   print("\033c")
   print("Here you can change the amount of food your group is eating")
