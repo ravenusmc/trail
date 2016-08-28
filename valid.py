@@ -68,8 +68,14 @@ def trailMenuValid(choice):
   else:
     return False 
 
-def increaseValid(speedUp, yoke):
-  if speedUp > yoke:
+def increaseValid(speedUp, wagon):
+  if (speedUp * 5) + wagon.speed > wagon.speed:
+    return False
+  else: 
+    return True
+
+def decreaseValid(speedDown, wagon):
+  if wagon.speed - (speedDown * 5) < 0:
     return False
   else: 
     return True
