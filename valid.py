@@ -68,6 +68,12 @@ def trailMenuValid(choice):
   else:
     return False 
 
+def increaseValid(speedUp, yoke):
+  if speedUp > yoke:
+    return False
+  else: 
+    return True
+
 
 
 

@@ -51,9 +51,15 @@ def changePace(wagon, leader, personOne, personTwo, personThree, personFour, mon
   print("1. Increase speed")
   print("2. Decrease speed")
   print(wagon.speed)
+  print(wagon.oxen)
   choice = int(input("What is your choice? "))
   if choice == 1: 
+    yoke = wagon.oxen / 2
+    print(yoke)
     speedUp = int(input("how many yoke's do you want to add, to your wagon? "))
+    while not increaseValid(speedUp, yoke):
+      print("Invalid selection")
+      speedUp = int(input("how many yoke's do you want to add, to your wagon? "))
     wagon.speed = (speedUp * 5) + wagon.speed
   elif choice == 2:
     speedDown = int(input("how many yoke's do you want to take off your wagon? "))
