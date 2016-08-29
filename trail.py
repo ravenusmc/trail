@@ -1,5 +1,6 @@
 from valid import *
 import datetime
+import random
 
 #This function will be where the player will be traveling the trail. 
 def travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour, month):
@@ -60,7 +61,7 @@ def checkSupplies(wagon, leader, personOne, personTwo, personThree, personFour, 
   print(wagon.axle)
   print(wagon.tongue)
   input("Press enter to return to the menu!")
-  trailMenu(wagon, leader, personOne, personTwo, personThree, personFour, month)
+  travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour, month)
 
 #This function will allow the user to change the pace of the wagon. 
 def changePace(wagon, leader, personOne, personTwo, personThree, personFour, month):
@@ -88,7 +89,7 @@ def changePace(wagon, leader, personOne, personTwo, personThree, personFour, mon
     wagon.speed = wagon.speed - (speedDown * 5)
   print("Your new wagon speed is:", wagon.speed)
   input("Press enter to return to the menu!")
-  trailMenu(wagon, leader, personOne, personTwo, personThree, personFour, month)
+  travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour, month)
 
 #This function will allow you to change the food levels for your party. 
 def changeFood(wagon, leader, personOne, personTwo, personThree, personFour, month):
@@ -112,11 +113,17 @@ def changeFood(wagon, leader, personOne, personTwo, personThree, personFour, mon
     print("Rations sent to 'tons' level")
     wagon.ration = "Tons"
   input("Press enter to return to the menu!")
-  trailMenu(wagon, leader, personOne, personTwo, personThree, personFour, month)
+  travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour, month)
 
 def buySupplies(wagon, leader, personOne, personTwo, personThree, personFour, month):
   print("\033c")
-
+  merchant = random.randint(1, 10)
+  if merchant > 5:
+    merchantStore(wagon, leader, personOne, personTwo, personThree, personFour, month)
+  elif merchant <= 5:
+    print("Sorry no Merchant is around!")
+  input("Press enter to return to the menu!")
+  travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour, month)
 
 
 
