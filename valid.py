@@ -62,8 +62,14 @@ def tongueValid(tongue):
 
 ## Validations for the trail file.
 
+def travellingTrailValid(choice):
+  if choice == 1 or choice == 2 or choice == 3:
+    return True
+  else: 
+    return False 
+
 def trailMenuValid(choice):
-  if choice == 1 or choice == 2 or choice == 3 or choice == 4 or choice == 5 or choice == 6:
+  if choice == 1 or choice == 2 or choice == 3 or choice == 4 or choice == 5:
     return True
   else:
     return False 
@@ -85,6 +91,8 @@ def changeFoodValid(choice):
     return True
   else: 
     return False
+
+
 
 
 

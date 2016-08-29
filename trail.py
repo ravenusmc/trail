@@ -1,34 +1,52 @@
 from valid import *
 import datetime
 
-#This is the main game menu that the user will see as they travel along the trail.
-def trailMenu(wagon, leader, personOne, personTwo, personThree, personFour, month):
+#This function will be where the player will be traveling the trail. 
+def travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour, month):
   print("\033c")
   print("Weather: ")
   print("Health: ")
   print("Pace: ", (wagon.oxen / 2)  * 5, "MPH")
   print("Rations: ", wagon.ration)
   print("Distance: ", wagon.distance)
-  print('\n')
+  print("1. Travel the trail")
+  print("2. Stop to rest")
+  print("3. More options.")
+  choice = int(input("What is your choice? "))
+  while not travellingTrailValid(choice):
+    print("Invalid Selection!")
+    choice = int(input("What is your choice? "))
+  if choice == 1:
+    print("add stuff")
+  elif choice == 2:
+    print("add stuff")
+  elif choice == 3: 
+    trailMenu(wagon, leader, personOne, personTwo, personThree, personFour, month)
+
+
+#This is the main game menu that the user will see as they travel along the trail.
+def trailMenu(wagon, leader, personOne, personTwo, personThree, personFour, month):
+  print("\033c")
   print("You may:")
   print("1. Continue on the trail")
   print("2. Check supplies")
   print("3. Change Pace")
   print("4. Change food rations")
-  print("5. Stop to rest")
-  print("6. Buy Supplies")
+  print("5. Buy Supplies")
   choice = int(input("What is your choice? "))
   while not trailMenuValid(choice):
     print("That was not a valid selection!")
     choice = int(input("What is your choice? "))
   if choice == 1:
-    wagon.move()
+    travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour, month)
   elif choice == 2:
     checkSupplies(wagon, leader, personOne, personTwo, personThree, personFour, month)
   elif choice == 3:
     changePace(wagon, leader, personOne, personTwo, personThree, personFour, month)
   elif choice == 4:
     changeFood(wagon, leader, personOne, personTwo, personThree, personFour, month)
+  elif choice == 6:
+    buySupplies(wagon, leader, personOne, personTwo, personThree, personFour, month)
 
 
 #This function takes the user to the supplies screen where they can see the level of their supplies. 
@@ -95,6 +113,10 @@ def changeFood(wagon, leader, personOne, personTwo, personThree, personFour, mon
     wagon.ration = "Tons"
   input("Press enter to return to the menu!")
   trailMenu(wagon, leader, personOne, personTwo, personThree, personFour, month)
+
+def buySupplies(wagon, leader, personOne, personTwo, personThree, personFour, month):
+  print("\033c")
+
 
 
 

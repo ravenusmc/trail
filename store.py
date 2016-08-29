@@ -135,7 +135,7 @@ def goodLuckScreen(wagon, leader, personOne, personTwo, personThree, personFour,
   # mixer.music.load('yankee_doodle.mp3')
   # mixer.music.play()
   input("Press enter to continue ")
-  trailMenu(wagon, leader, personOne, personTwo, personThree, personFour, month)
+  travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour, month)
 
 
 ##### Other Store Functions 
