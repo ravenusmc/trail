@@ -121,7 +121,7 @@ def buySupplies(wagon, leader, personOne, personTwo, personThree, personFour, mo
   print("\033c")
   merchant = random.randint(1, 10)
   if merchant > 5:
-    merchantStore(wagon, leader, personOne, personTwo, personThree, personFour, month)
+    travelingMercahnt(wagon, leader, personOne, personTwo, personThree, personFour, month, oxenTotal, foodTotal, clothTotal, spareTotal)
   elif merchant <= 5:
     print("Sorry no Merchant is around!")
   input("Press enter to return to the menu!")

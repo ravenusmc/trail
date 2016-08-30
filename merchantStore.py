@@ -3,11 +3,11 @@ from trail import *
 from pygame import mixer
 
 #This is the initial store greeting function. The user will learn here what they can buy. 
-def storeGreeting(wagon, leader, personOne, personTwo, personThree, personFour, month, oxenTotal, foodTotal, clothTotal, spareTotal):
+def travelingMercahnt(wagon, leader, personOne, personTwo, personThree, personFour, month, oxenTotal, foodTotal, clothTotal, spareTotal):
   print("\033c")
   print("{__________________________________}")
-  print("Hello, I am Daniel.")
-  print("So you're going to Oregon! I can fix you up with what you need: ")
+  print("Hello, I am the travelling Merchant.")
+  print("Luckily you found me on your journey! I can fix you up with what you need: ")
   print(" - A team of oxen to pull your wagon")
   print(" - Clothing for both summer and winter")
   print(" - Plenty of food for the trip")
