@@ -2,6 +2,8 @@ from valid import *
 import datetime
 import random
 
+#Need possible loop for travellingTrail function. 
+
 #This function will be where the player will be traveling the trail. 
 def travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour, month):
   print("\033c")
