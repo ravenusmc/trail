@@ -13,7 +13,7 @@ def travelingMerchant(wagon, leader, personOne, personTwo, personThree, personFo
   print(" - Plenty of food for the trip")
   print(" - Spare parts for your wagon")
   input("Press enter to continue ")
-  MerchantMain(wagon, leader, personOne, personTwo, personThree, personFour, month)
+  
 
 #This is the main menu screen which will keep track of all of the supplies that the player buys.
 def MerchantMain(wagon, leader, personOne, personTwo, personThree, personFour, month):

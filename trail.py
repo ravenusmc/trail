@@ -1,5 +1,5 @@
 from valid import *
-from merchantStore import *
+from merchant import *
 import datetime
 import random
 
@@ -121,9 +121,10 @@ def changeFood(wagon, leader, personOne, personTwo, personThree, personFour, mon
 def buySupplies(wagon, leader, personOne, personTwo, personThree, personFour, month):
   print("\033c")
   merchant = random.randint(1, 10)
-  print(merchant)
   if merchant > 0:
-    travelingMerchant(wagon, leader, personOne, personTwo, personThree, personFour, month)
+    merchant = Merchant()
+    merchant.travelingMerchant(wagon, leader)
+    merchant.MerchantMain(wagon, leader)
   elif merchant <= 0:
     print("Sorry no Merchant is around!")
   input("Press enter to return to the menu!")
