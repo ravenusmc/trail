@@ -1,4 +1,5 @@
 from valid import *
+from merchantStore import *
 import datetime
 import random
 
@@ -48,7 +49,7 @@ def trailMenu(wagon, leader, personOne, personTwo, personThree, personFour, mont
     changePace(wagon, leader, personOne, personTwo, personThree, personFour, month)
   elif choice == 4:
     changeFood(wagon, leader, personOne, personTwo, personThree, personFour, month)
-  elif choice == 6:
+  elif choice == 5:
     buySupplies(wagon, leader, personOne, personTwo, personThree, personFour, month)
 
 
@@ -120,9 +121,10 @@ def changeFood(wagon, leader, personOne, personTwo, personThree, personFour, mon
 def buySupplies(wagon, leader, personOne, personTwo, personThree, personFour, month):
   print("\033c")
   merchant = random.randint(1, 10)
-  if merchant > 5:
-    travelingMercahnt(wagon, leader, personOne, personTwo, personThree, personFour, month, oxenTotal, foodTotal, clothTotal, spareTotal)
-  elif merchant <= 5:
+  print(merchant)
+  if merchant > 0:
+    travelingMerchant(wagon, leader, personOne, personTwo, personThree, personFour, month)
+  elif merchant <= 0:
     print("Sorry no Merchant is around!")
   input("Press enter to return to the menu!")
   travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour, month)

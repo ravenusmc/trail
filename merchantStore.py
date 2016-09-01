@@ -3,7 +3,7 @@ from trail import *
 from pygame import mixer
 
 #This is the initial store greeting function. The user will learn here what they can buy. 
-def travelingMercahnt(wagon, leader, personOne, personTwo, personThree, personFour, month, oxenTotal, foodTotal, clothTotal, spareTotal):
+def travelingMerchant(wagon, leader, personOne, personTwo, personThree, personFour, month):
   print("\033c")
   print("{__________________________________}")
   print("Hello, I am the travelling Merchant.")
@@ -13,17 +13,11 @@ def travelingMercahnt(wagon, leader, personOne, personTwo, personThree, personFo
   print(" - Plenty of food for the trip")
   print(" - Spare parts for your wagon")
   input("Press enter to continue ")
-  storeMain(wagon, leader, personOne, personTwo, personThree, personFour, month, oxenTotal, foodTotal, clothTotal, spareTotal)
+  MerchantMain(wagon, leader, personOne, personTwo, personThree, personFour, month)
 
 #This is the main menu screen which will keep track of all of the supplies that the player buys.
-def storeMain(wagon, leader, personOne, personTwo, personThree, personFour, month, oxenTotal, foodTotal, clothTotal, spareTotal):
+def MerchantMain(wagon, leader, personOne, personTwo, personThree, personFour, month):
   storeGreeter()
-  print("1. Oxen $" + str(oxenTotal))
-  print("2. Food $" + str(foodTotal))
-  print("3. Clothing $" + str(clothTotal))
-  print("4. Spare Parts $" + str(spareTotal))
-  print("5. Start Your Journey!")
-  leader.money = leader.money - (oxenTotal + foodTotal + clothTotal + spareTotal)
   print("Amount you have: $" + str(leader.money))
   choice = int(input("Which item would you like to buy? "))
   while not storemainValid(choice):
@@ -52,7 +46,7 @@ def storeMain(wagon, leader, personOne, personTwo, personThree, personFour, mont
     spareTotal = wheelTotal + axleTotal + tongueTotal
     storeMain(wagon, leader, personOne, personTwo, personThree, personFour, month, oxenTotal, foodTotal, clothTotal, spareTotal)
   elif choice == 5:
-    goodLuckScreen(wagon, leader, personOne, personTwo, personThree, personFour, month)
+    travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour, month)
 
 #This is the function that takes you to buy the required number of oxen for your journey.
 def oxen():
