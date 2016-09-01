@@ -21,12 +21,17 @@ def travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour
     print("Invalid Selection!")
     choice = int(input("What is your choice? "))
   if choice == 1:
-    print("add stuff")
+    trailMoving(wagon, leader, personOne, personTwo, personThree, personFour, month)
   elif choice == 2:
     print("add stuff")
   elif choice == 3: 
     trailMenu(wagon, leader, personOne, personTwo, personThree, personFour, month)
 
+def trailMoving(wagon, leader, personOne, personTwo, personThree, personFour, month):
+  print("\033c")
+
+
+### Trail Menu and its Functions below ###
 
 #This is the main game menu that the user will see as they travel along the trail.
 def trailMenu(wagon, leader, personOne, personTwo, personThree, personFour, month):
