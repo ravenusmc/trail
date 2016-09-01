@@ -118,6 +118,11 @@ def changeFood(wagon, leader, personOne, personTwo, personThree, personFour, mon
   input("Press enter to return to the menu!")
   travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour, month)
 
+#This function will get use a radom number generator to see if a merchant is nearby. If the 
+#merchant is nearby the player will be taken to the merchant store who sells some items. 
+#However, the merchant store does not sell everything. Finally, this was the first time 
+#that I actually tried using an object to set up the merchant. It worked nicely and I believe 
+#it helped me gain a much larger grasp of OOP. 
 def buySupplies(wagon, leader, personOne, personTwo, personThree, personFour, month):
   print("\033c")
   merchant = random.randint(1, 10)
@@ -129,11 +134,6 @@ def buySupplies(wagon, leader, personOne, personTwo, personThree, personFour, mo
     print("Sorry no Merchant is around!")
   input("Press enter to return to the menu!")
   travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour, month)
-
-
-
-
-
 
 
 
