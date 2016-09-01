@@ -92,6 +92,20 @@ def changeFoodValid(choice):
   else: 
     return False
 
+## Validations for the merchant class. 
+
+def merchantClassValid(choice):
+  if choice == 1 or choice == 2 or choice == 3:
+    return True 
+  else: 
+    return False 
+
+def merchantPriceValid(amount):
+  if amount < 0:
+    return False
+  else:
+    return True 
+
 
 
 
