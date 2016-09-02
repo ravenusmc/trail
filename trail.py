@@ -13,6 +13,7 @@ def travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour
   print("Pace: ", wagon.speed, "MPH")
   print("Ration Level: ", wagon.ration)
   print("Distance: ", wagon.distance)
+  print(leader.life)
   print("1. Travel the trail")
   print("2. Stop to rest")
   print("3. More options.")
@@ -29,15 +30,15 @@ def travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour
 
 def trailMoving(wagon, leader, personOne, personTwo, personThree, personFour, month):
   print("\033c")
-  print("You move along the trail!")
-  wagon.eat() 
-  leader.lifeDrop()
-  personOne.lifeDrop()
-  personTwo.lifeDrop()
-  personThree.lifeDrop()
-  personFour.lifeDrop()
+  print(leader.life)
+  leader.lifeDrop(wagon)
+  personOne.lifeDrop(wagon)
+  personTwo.lifeDrop(wagon)
+  personThree.lifeDrop(wagon)
+  personFour.lifeDrop(wagon)
   wagon.move()
   wagon.healthLevel(leader, personOne, personTwo, personThree, personFour)
+  input("Press enter to return to the menu!")
   travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour, month)
 
 

@@ -32,6 +32,7 @@ class Wagon():
     elif self.ration == "Tons":
       self.food -= 1
 
+  #This method will determine the overall health for the wagon. 
   def healthLevel(self, leader, personOne, personTwo, personThree, personFour):
     if leader.life > 20 and personOne.life > 20 and personTwo.life > 20 and personThree.life > 20 and personFour.life > 20:
       self.health = "Good"
@@ -41,12 +42,7 @@ class Wagon():
       self.health = "Poor"
 
   
-# wagon = Wagon("Meager")
-# wagon.eat()
-# print(wagon.food)
-# wagon.eat()
-# print(wagon.food)
-# wagon.eat()
-# print(wagon.food)
+wagon = Wagon("Meager", "Good")
+
 
 
