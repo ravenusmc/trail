@@ -2,7 +2,7 @@
 #This is where the wagon class will be. 
 class Wagon():
 
-  def __init__(self, ration):
+  def __init__(self, ration, health):
     self.oxen = 0
     self.food = 100
     self.ration = ration
@@ -12,6 +12,7 @@ class Wagon():
     self.tongue = 0
     self.speed = 0
     self.distance = 2000
+    self.health = health 
 
   #This method will keep track of the speed and subtract that number from the distance each day. 
   def move(self):
@@ -31,6 +32,14 @@ class Wagon():
     elif self.ration == "Tons":
       self.food -= 1
 
+  def healthLevel(self, leader, personOne, personTwo, personThree, personFour):
+    if leader.life > 20 and personOne.life > 20 and personTwo.life > 20 and personThree.life > 20 and personFour.life > 20:
+      self.health = "Good"
+    elif leader.life > 10 and personOne.life > 10 and personTwo.life > 10 and personThree.life > 10 and personFour.life > 10:
+      self.health = "Average"
+    elif leader.life > 5 and personOne.life > 5 and personTwo.life > 5 and personThree.life > 5 and personFour.life > 5:
+      self.health = "Poor"
+
   
 # wagon = Wagon("Meager")
 # wagon.eat()
@@ -40,13 +49,4 @@ class Wagon():
 # wagon.eat()
 # print(wagon.food)
 
-#Trail was 2000 miles long
-#covered about 15 miles per day 
-#Took 4-6 months to make the journey. 
-#10 oxen is the max I allow someone to buy 
-# 2 is per yoke. 20 Miles per day is max speed with 10 oxen. 8 oxen miles per day is 16
-# 10 oxen is 25 MPH , 8 oxen is 20 mph, number of oxen * 2.5 is speed. 
-
-# Need to have method that decreases food supplies based on what the ration level is set at. 
-# Need a method that decreases distance based on the speed. 
 

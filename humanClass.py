@@ -9,7 +9,7 @@ class Human():
   #This method will drain the life from each of the player objects a little bit each day. It's a tough 
   #journey. In order for the life to go back up, the wagon has got to stop. 
   def lifeDrop(self):
-    self.life -= .25
+    self.life -= 3
 
 
     

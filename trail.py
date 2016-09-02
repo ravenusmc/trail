@@ -9,7 +9,7 @@ import random
 def travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour, month):
   print("\033c")
   print("Weather: ")
-  print("Health: ")
+  print("Health:", wagon.health)
   print("Pace: ", wagon.speed, "MPH")
   print("Ration Level: ", wagon.ration)
   print("Distance: ", wagon.distance)
@@ -37,6 +37,7 @@ def trailMoving(wagon, leader, personOne, personTwo, personThree, personFour, mo
   personThree.lifeDrop()
   personFour.lifeDrop()
   wagon.move()
+  wagon.healthLevel(leader, personOne, personTwo, personThree, personFour)
   travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour, month)
 
 
