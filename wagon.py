@@ -4,7 +4,7 @@ class Wagon():
 
   def __init__(self, ration):
     self.oxen = 0
-    self.food = 0
+    self.food = 100
     self.ration = ration
     self.cloth = 0
     self.wheel = 0
@@ -13,14 +13,32 @@ class Wagon():
     self.speed = 0
     self.distance = 2000
 
-  #I may need to think about placing the human objects into here?
+  #This method will keep track of the speed and subtract that number from the distance each day. 
   def move(self):
-    self.speed = 1
     self.speed = 2.5 * self.oxen
-    print(self.speed)
+    self.distance -= self.speed 
+    if self.distance == 0:
+        print("You have reached Oregon!")
+
+  #This will affect the amount of food eating by the ration level. I decided to place this method here 
+  #and not in the human class becuase one cannot change the individual ration levels-as of now. Thus, 
+  #since ration and food are properties of wagon I figured it would be easier to keep them here. 
+  def eat(self):
+    if self.ration == "Meager":
+      self.food -= .25
+    elif self.ration == "Normal":
+      self.food -= .5
+    elif self.ration == "Tons":
+      self.food -= 1
+
   
-# wagon = Wagon()
-# wagon.move()
+# wagon = Wagon("Meager")
+# wagon.eat()
+# print(wagon.food)
+# wagon.eat()
+# print(wagon.food)
+# wagon.eat()
+# print(wagon.food)
 
 #Trail was 2000 miles long
 #covered about 15 miles per day 

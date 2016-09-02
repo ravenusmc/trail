@@ -10,8 +10,8 @@ def travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour
   print("\033c")
   print("Weather: ")
   print("Health: ")
-  print("Pace: ", (wagon.oxen / 2)  * 5, "MPH")
-  print("Rations: ", wagon.ration)
+  print("Pace: ", wagon.speed, "MPH")
+  print("Ration Level: ", wagon.ration)
   print("Distance: ", wagon.distance)
   print("1. Travel the trail")
   print("2. Stop to rest")
@@ -29,6 +29,15 @@ def travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour
 
 def trailMoving(wagon, leader, personOne, personTwo, personThree, personFour, month):
   print("\033c")
+  print("You move along the trail!")
+  wagon.eat() 
+  leader.lifeDrop()
+  personOne.lifeDrop()
+  personTwo.lifeDrop()
+  personThree.lifeDrop()
+  personFour.lifeDrop()
+  wagon.move()
+  travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour, month)
 
 
 ### Trail Menu and its Functions below ###
@@ -141,12 +150,4 @@ def buySupplies(wagon, leader, personOne, personTwo, personThree, personFour, mo
   travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour, month)
 
 
-
-
-# def setupMenu(wagon, leader, personOne, personTwo, personThree, personFour, month):
-#   calenderSetup(month)
-
-# def calenderSetup(month):
-#   test = datetime(1848, 1, 1)
-#   print(test)
 
