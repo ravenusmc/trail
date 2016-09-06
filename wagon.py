@@ -15,8 +15,9 @@ class Wagon():
     self.tongue = 0
     self.speed = 0
     self.distance = 2000
-    
-
+  
+  #This method is what will determine the weather type. I really think, that I should have had some trail class
+  #and off of that had a wagon and human class subordinate to that class. 
   def weatherType(self):
     weatherType = random.randint(1,3) 
     if weatherType == 1:

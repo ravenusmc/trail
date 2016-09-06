@@ -9,7 +9,7 @@ import random
 def travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour, month):
   print("\033c")
   print("Date: ")
-  print("Weather: ")
+  print("Weather: ", wagon.weather)
   print("Health:", wagon.health)
   print("Pace: ", wagon.speed, "MPH")
   print("Ration Level: ", wagon.ration)
@@ -29,17 +29,18 @@ def travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour
   elif choice == 3: 
     trailMenu(wagon, leader, personOne, personTwo, personThree, personFour, month)
 
+#This function will actually change all of the factors when the wagon is moving. The Weather type, distance 
+#travelled, wagon speed, pace, ration level, and overall health are all calculated by this one function. 
 def trailMoving(wagon, leader, personOne, personTwo, personThree, personFour, month):
   print("\033c")
-  print(leader.life)
   leader.lifeDrop(wagon)
   personOne.lifeDrop(wagon)
   personTwo.lifeDrop(wagon)
   personThree.lifeDrop(wagon)
   personFour.lifeDrop(wagon)
+  wagon.weatherType()
   wagon.move()
   wagon.healthLevel(leader, personOne, personTwo, personThree, personFour)
-  input("Press enter to return to the menu!")
   travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour, month)
 
 

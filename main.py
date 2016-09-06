@@ -70,7 +70,7 @@ def characterNames(choice):
   name = input("Please enter a name: ")
   personFour = Human(name, "partyFour")
   print("Jumping back to 1848!")
-  wagon = Wagon("Normal", "Good")
+  wagon = Wagon("Normal", "Good", "Sunny")
   monthSelection(wagon, leader, personOne, personTwo, personThree, personFour)
 
 #This function is where the player will select which month they want to start the journey in.
