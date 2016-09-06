@@ -8,6 +8,7 @@ import random
 #This function will be where the player will be traveling the trail. 
 def travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour, month):
   print("\033c")
+  print("Date: ")
   print("Weather: ")
   print("Health:", wagon.health)
   print("Pace: ", wagon.speed, "MPH")

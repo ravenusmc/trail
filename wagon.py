@@ -1,18 +1,31 @@
+import random 
 
 #This is where the wagon class will be. 
 class Wagon():
 
-  def __init__(self, ration, health):
+  def __init__(self, ration, health, weather):
+    self.ration = ration
+    self.health = health 
+    self.weather = weather 
     self.oxen = 0
     self.food = 100
-    self.ration = ration
     self.cloth = 0
     self.wheel = 0
     self.axle = 0
     self.tongue = 0
     self.speed = 0
     self.distance = 2000
-    self.health = health 
+    
+
+  def weatherType(self):
+    weatherType = random.randint(1,3) 
+    if weatherType == 1:
+      self.weather = "Sunny"
+    elif weatherType == 2:
+      self.weather = "Cloudy"
+    elif weatherType == 3:
+      self.weather = "Rainy"
+    
 
   #This method will keep track of the speed and subtract that number from the distance each day. 
   def move(self):
@@ -42,7 +55,9 @@ class Wagon():
       self.health = "Poor"
 
   
-wagon = Wagon("Meager", "Good")
+wagon = Wagon("Meager", "Good", "Sunny")
+wagon.weatherType()
+print(wagon.weather)
 
 
 
