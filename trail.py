@@ -28,7 +28,7 @@ def travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour
   if choice == 1:
     trailMoving(wagon, leader, personOne, personTwo, personThree, personFour)
   elif choice == 2:
-    print("add stuff")
+    trailResting(wagon, leader, personOne, personTwo, personThree, personFour)
   elif choice == 3: 
     trailMenu(wagon, leader, personOne, personTwo, personThree, personFour)
 
@@ -46,6 +46,12 @@ def trailMoving(wagon, leader, personOne, personTwo, personThree, personFour):
   wagon.move()
   wagon.healthLevel(leader, personOne, personTwo, personThree, personFour)
   travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour)
+
+#This function is what will control everything when the user rests. The date will still increase, food will go down
+#but the party health will go up. 
+def trailResting(wagon, leader, personOne, personTwo, personThree, personFour):
+  print("\033c")
+  wagon.changeDate()
 
 
 ### Trail Menu and its Functions below ###
