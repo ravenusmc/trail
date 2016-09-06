@@ -19,11 +19,11 @@ class Human():
     elif wagon.ration == "Tons":
       self.life -= 3
 
-leader = Human("Mike", "Banker")
-print(leader.life)
-leader.lifeDrop(wagon)
-print(leader.life)
-leader.lifeDrop(wagon)
-print(leader.life)
+# leader = Human("Mike", "Banker")
+# print(leader.life)
+# leader.lifeDrop(wagon)
+# print(leader.life)
+# leader.lifeDrop(wagon)
+# print(leader.life)
 
     

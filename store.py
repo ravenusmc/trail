@@ -3,7 +3,7 @@ from trail import *
 from pygame import mixer
 
 #This is the initial store greeting function. The user will learn here what they can buy. 
-def storeGreeting(wagon, leader, personOne, personTwo, personThree, personFour, month, oxenTotal, foodTotal, clothTotal, spareTotal):
+def storeGreeting(wagon, leader, personOne, personTwo, personThree, personFour, oxenTotal, foodTotal, clothTotal, spareTotal):
   print("\033c")
   print("{__________________________________}")
   print("Hello, I am Daniel.")
@@ -13,10 +13,10 @@ def storeGreeting(wagon, leader, personOne, personTwo, personThree, personFour, 
   print(" - Plenty of food for the trip")
   print(" - Spare parts for your wagon")
   input("Press enter to continue ")
-  storeMain(wagon, leader, personOne, personTwo, personThree, personFour, month, oxenTotal, foodTotal, clothTotal, spareTotal)
+  storeMain(wagon, leader, personOne, personTwo, personThree, personFour, oxenTotal, foodTotal, clothTotal, spareTotal)
 
 #This is the main menu screen which will keep track of all of the supplies that the player buys.
-def storeMain(wagon, leader, personOne, personTwo, personThree, personFour, month, oxenTotal, foodTotal, clothTotal, spareTotal):
+def storeMain(wagon, leader, personOne, personTwo, personThree, personFour, oxenTotal, foodTotal, clothTotal, spareTotal):
   storeGreeter()
   print("1. Oxen $" + str(oxenTotal))
   print("2. Food $" + str(foodTotal))
@@ -33,15 +33,15 @@ def storeMain(wagon, leader, personOne, personTwo, personThree, personFour, mont
     yokeNumber = oxenTotal / 40
     wagon.oxen = int(yokeNumber * 2)
     wagon.speed = yokeNumber * 5 
-    storeMain(wagon, leader, personOne, personTwo, personThree, personFour, month, oxenTotal, foodTotal, clothTotal, spareTotal)
+    storeMain(wagon, leader, personOne, personTwo, personThree, personFour, oxenTotal, foodTotal, clothTotal, spareTotal)
   elif choice == 2:
     foodTotal = food()
     wagon.food = foodTotal / .20
-    storeMain(wagon, leader, personOne, personTwo, personThree, personFour, month, oxenTotal, foodTotal, clothTotal, spareTotal)
+    storeMain(wagon, leader, personOne, personTwo, personThree, personFour, oxenTotal, foodTotal, clothTotal, spareTotal)
   elif choice == 3:
     clothTotal = cloth()
     wagon.cloth = clothTotal / 10
-    storeMain(wagon, leader, personOne, personTwo, personThree, personFour, month, oxenTotal, foodTotal, clothTotal, spareTotal)
+    storeMain(wagon, leader, personOne, personTwo, personThree, personFour, oxenTotal, foodTotal, clothTotal, spareTotal)
   elif choice == 4:
     wheelTotal = wheelSpare()
     wagon.wheel = wheelTotal / 10
@@ -50,9 +50,9 @@ def storeMain(wagon, leader, personOne, personTwo, personThree, personFour, mont
     tongueTotal = tongueSpare()
     wagon.tongue = tongueTotal / 10
     spareTotal = wheelTotal + axleTotal + tongueTotal
-    storeMain(wagon, leader, personOne, personTwo, personThree, personFour, month, oxenTotal, foodTotal, clothTotal, spareTotal)
+    storeMain(wagon, leader, personOne, personTwo, personThree, personFour, oxenTotal, foodTotal, clothTotal, spareTotal)
   elif choice == 5:
-    goodLuckScreen(wagon, leader, personOne, personTwo, personThree, personFour, month)
+    goodLuckScreen(wagon, leader, personOne, personTwo, personThree, personFour)
 
 #This is the function that takes you to buy the required number of oxen for your journey.
 def oxen():
@@ -126,7 +126,7 @@ def tongueSpare():
   return tongueTotal
 
 #A brief screen that will tell the player good luck once they exit the store. 
-def goodLuckScreen(wagon, leader, personOne, personTwo, personThree, personFour, month):
+def goodLuckScreen(wagon, leader, personOne, personTwo, personThree, personFour):
   print("\033c")
   print("Well, then, you're ready to start. Good Luck!")
   print("The journey will be long and hard!")
@@ -135,7 +135,7 @@ def goodLuckScreen(wagon, leader, personOne, personTwo, personThree, personFour,
   # mixer.music.load('yankee_doodle.mp3')
   # mixer.music.play()
   input("Press enter to continue ")
-  travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour, month)
+  travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour)
 
 
 ##### Other Store Functions 

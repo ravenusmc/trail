@@ -2,13 +2,16 @@ from valid import *
 from merchant import *
 import datetime
 import random
+#I am using pandas to convert my date. I spend about two weeks slowly researching how to take a date
+#and add one to it. I found the solution on stackover flow by using pandas. 
+import pandas as pd
 
 #Need possible loop for travellingTrail function. 
 
 #This function will be where the player will be traveling the trail. 
-def travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour, month):
+def travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour):
   print("\033c")
-  print("Date: ")
+  print("Date: ", wagon.month)
   print("Weather: ", wagon.weather)
   print("Health:", wagon.health)
   print("Pace: ", wagon.speed, "MPH")
@@ -23,31 +26,32 @@ def travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour
     print("Invalid Selection!")
     choice = int(input("What is your choice? "))
   if choice == 1:
-    trailMoving(wagon, leader, personOne, personTwo, personThree, personFour, month)
+    trailMoving(wagon, leader, personOne, personTwo, personThree, personFour)
   elif choice == 2:
     print("add stuff")
   elif choice == 3: 
-    trailMenu(wagon, leader, personOne, personTwo, personThree, personFour, month)
+    trailMenu(wagon, leader, personOne, personTwo, personThree, personFour)
 
 #This function will actually change all of the factors when the wagon is moving. The Weather type, distance 
 #travelled, wagon speed, pace, ration level, and overall health are all calculated by this one function. 
-def trailMoving(wagon, leader, personOne, personTwo, personThree, personFour, month):
+def trailMoving(wagon, leader, personOne, personTwo, personThree, personFour):
   print("\033c")
   leader.lifeDrop(wagon)
   personOne.lifeDrop(wagon)
   personTwo.lifeDrop(wagon)
   personThree.lifeDrop(wagon)
   personFour.lifeDrop(wagon)
+  wagon.changeDate()
   wagon.weatherType()
   wagon.move()
   wagon.healthLevel(leader, personOne, personTwo, personThree, personFour)
-  travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour, month)
+  travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour)
 
 
 ### Trail Menu and its Functions below ###
 
 #This is the main game menu that the user will see as they travel along the trail.
-def trailMenu(wagon, leader, personOne, personTwo, personThree, personFour, month):
+def trailMenu(wagon, leader, personOne, personTwo, personThree, personFour):
   print("\033c")
   print("You may:")
   print("1. Continue on the trail")
@@ -60,19 +64,19 @@ def trailMenu(wagon, leader, personOne, personTwo, personThree, personFour, mont
     print("That was not a valid selection!")
     choice = int(input("What is your choice? "))
   if choice == 1:
-    travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour, month)
+    travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour)
   elif choice == 2:
-    checkSupplies(wagon, leader, personOne, personTwo, personThree, personFour, month)
+    checkSupplies(wagon, leader, personOne, personTwo, personThree, personFour)
   elif choice == 3:
-    changePace(wagon, leader, personOne, personTwo, personThree, personFour, month)
+    changePace(wagon, leader, personOne, personTwo, personThree, personFour)
   elif choice == 4:
-    changeFood(wagon, leader, personOne, personTwo, personThree, personFour, month)
+    changeFood(wagon, leader, personOne, personTwo, personThree, personFour)
   elif choice == 5:
-    buySupplies(wagon, leader, personOne, personTwo, personThree, personFour, month)
+    buySupplies(wagon, leader, personOne, personTwo, personThree, personFour)
 
 
 #This function takes the user to the supplies screen where they can see the level of their supplies. 
-def checkSupplies(wagon, leader, personOne, personTwo, personThree, personFour, month):
+def checkSupplies(wagon, leader, personOne, personTwo, personThree, personFour):
   print("\033c")
   print("You have the following supplies on hand: ")
   print(wagon.oxen)
@@ -82,10 +86,10 @@ def checkSupplies(wagon, leader, personOne, personTwo, personThree, personFour, 
   print(wagon.axle)
   print(wagon.tongue)
   input("Press enter to return to the menu!")
-  travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour, month)
+  travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour)
 
 #This function will allow the user to change the pace of the wagon. 
-def changePace(wagon, leader, personOne, personTwo, personThree, personFour, month):
+def changePace(wagon, leader, personOne, personTwo, personThree, personFour):
   print("\033c")
   print("Here you can change the speed of your wagon.")
   print("You currently have:", wagon.oxen, "oxen.")
@@ -110,10 +114,10 @@ def changePace(wagon, leader, personOne, personTwo, personThree, personFour, mon
     wagon.speed = wagon.speed - (speedDown * 5)
   print("Your new wagon speed is:", wagon.speed)
   input("Press enter to return to the menu!")
-  travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour, month)
+  travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour)
 
 #This function will allow you to change the food levels for your party. 
-def changeFood(wagon, leader, personOne, personTwo, personThree, personFour, month):
+def changeFood(wagon, leader, personOne, personTwo, personThree, personFour):
   print("\033c")
   print("Here you can change the amount of food your group is eating")
   print("What level do you want to make them at: ")
@@ -134,14 +138,14 @@ def changeFood(wagon, leader, personOne, personTwo, personThree, personFour, mon
     print("Rations sent to 'tons' level")
     wagon.ration = "Tons"
   input("Press enter to return to the menu!")
-  travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour, month)
+  travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour)
 
 #This function will get use a radom number generator to see if a merchant is nearby. If the 
 #merchant is nearby the player will be taken to the merchant store who sells some items. 
 #However, the merchant store does not sell everything. Finally, this was the first time 
 #that I actually tried using an object to set up the merchant. It worked nicely and I believe 
 #it helped me gain a much larger grasp of OOP. 
-def buySupplies(wagon, leader, personOne, personTwo, personThree, personFour, month):
+def buySupplies(wagon, leader, personOne, personTwo, personThree, personFour):
   print("\033c")
   merchant = random.randint(1, 10)
   if merchant > 0:
@@ -151,7 +155,7 @@ def buySupplies(wagon, leader, personOne, personTwo, personThree, personFour, mo
   elif merchant <= 0:
     print("Sorry no Merchant is around!")
   input("Press enter to return to the menu!")
-  travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour, month)
+  travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour)
 
 
 

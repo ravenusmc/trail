@@ -1,12 +1,14 @@
 import random 
+import pandas as pd
 
 #This is where the wagon class will be. 
 class Wagon():
 
-  def __init__(self, ration, health, weather):
+  def __init__(self, ration, health, weather, month):
     self.ration = ration
     self.health = health 
-    self.weather = weather 
+    self.weather = weather
+    self.month = month 
     self.oxen = 0
     self.food = 100
     self.cloth = 0
@@ -55,10 +57,24 @@ class Wagon():
     elif leader.life > 5 and personOne.life > 5 and personTwo.life > 5 and personThree.life > 5 and personFour.life > 5:
       self.health = "Poor"
 
-  
-wagon = Wagon("Meager", "Good", "Sunny")
-wagon.weatherType()
-print(wagon.weather)
+  #This method was probably the most annoying thing to write! It essentially changes the date for the player. 
+  #it takes in the starting date that the player entered and then increases that date by one. Not a hard thing to do
+  #but actually doing this took a lot of time to find something that was simple to use and which I understood. 
+  def changeDate(self):
+    startdate = self.month
+    self.month = pd.to_datetime(startdate) + pd.DateOffset(days=1)
+
+# month = "3/1/1848"
+# wagon = Wagon("Meager", "Good", "Sunny", month)
+# print(wagon.month)
+# wagon.changeDate()
+# print(wagon.month)
+# wagon.changeDate()
+# print(wagon.month)
+
+# wagon.changeDate()
+# print(wagon.month)
+
 
 
 
