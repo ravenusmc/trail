@@ -2,12 +2,10 @@ from valid import *
 from merchant import *
 import datetime
 import random
-#I am using pandas to convert my date. I spend about two weeks slowly researching how to take a date
+#I am using pandas to convert my date. I spent about two weeks slowly researching how to take a date
 #and add one to it. I found the solution on stackover flow by using pandas. 
 import pandas as pd
-
-#Need possible loop for travellingTrail function. 
-
+ 
 #This function will be where the player will be traveling the trail. 
 def travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour):
   print("\033c")
@@ -25,12 +23,15 @@ def travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour
   while not travellingTrailValid(choice):
     print("Invalid Selection!")
     choice = int(input("What is your choice? "))
-  if choice == 1:
-    trailMoving(wagon, leader, personOne, personTwo, personThree, personFour)
-  elif choice == 2:
-    trailResting(wagon, leader, personOne, personTwo, personThree, personFour)
-  elif choice == 3: 
-    trailMenu(wagon, leader, personOne, personTwo, personThree, personFour)
+  if wagon.distance > 0:
+    if choice == 1:
+      trailMoving(wagon, leader, personOne, personTwo, personThree, personFour)
+    elif choice == 2:
+      trailResting(wagon, leader, personOne, personTwo, personThree, personFour)
+    elif choice == 3: 
+      trailMenu(wagon, leader, personOne, personTwo, personThree, personFour)
+  else:
+    Oregon(wagon, leader, personOne, personTwo, personThree, personFour)
 
 #This function will actually change all of the factors when the wagon is moving. The Weather type, distance 
 #travelled, wagon speed, pace, ration level, and overall health are all calculated by this one function. 
@@ -45,8 +46,6 @@ def trailMoving(wagon, leader, personOne, personTwo, personThree, personFour):
   wagon.weatherType()
   wagon.eat()
   wagon.move()
-  if wagon.distance == 0:
-    Oregon(wagon, leader, personOne, personTwo, personThree, personFour)
   wagon.healthLevel(leader, personOne, personTwo, personThree, personFour)
   travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour)
 
@@ -73,6 +72,7 @@ def Oregon(wagon, leader, personOne, personTwo, personThree, personFour):
   print("Conglaturation!!!")
   print("You have completed a Great Game!")
   print("Now go and rest our Heroes!")
+  input("Press Enter to continue!")
 
 ### Trail Menu and its Functions below ###
 
