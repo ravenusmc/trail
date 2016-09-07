@@ -18,6 +18,7 @@ class Human():
     elif wagon.ration == "Tons":
       self.life -= 3
 
+  #This method will increase the life of the party when they are resting. 
   def lifeIncrease(self, wagon):
     if wagon.ration == "Tons":
       self.life += 5
@@ -27,11 +28,6 @@ class Human():
       self.life += 3
 
 
-# leader = Human("Mike", "Banker")
-# print(leader.life)
-# leader.lifeDrop(wagon)
-# print(leader.life)
-# leader.lifeDrop(wagon)
-# print(leader.life)
+
 
     

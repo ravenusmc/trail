@@ -10,7 +10,7 @@ class Wagon():
     self.weather = weather
     self.month = month 
     self.oxen = 0
-    self.food = 0
+    self.food = 100
     self.cloth = 0
     self.wheel = 0
     self.axle = 0
@@ -66,14 +66,10 @@ class Wagon():
 
 # month = "3/1/1848"
 # wagon = Wagon("Meager", "Good", "Sunny", month)
-# print(wagon.month)
-# wagon.changeDate()
-# print(wagon.month)
-# wagon.changeDate()
-# print(wagon.month)
+# print(wagon.food)
+# wagon.eat()
+# print(wagon.food)
 
-# wagon.changeDate()
-# print(wagon.month)
 
 
 

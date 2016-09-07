@@ -18,7 +18,6 @@ def travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour
   print("Ration Level: ", wagon.ration)
   print("Food amount: ", wagon.food)
   print("Distance: ", wagon.distance)
-  print(leader.life)
   print("1. Travel the trail")
   print("2. Stop to rest")
   print("3. More options.")
@@ -44,7 +43,10 @@ def trailMoving(wagon, leader, personOne, personTwo, personThree, personFour):
   personFour.lifeDrop(wagon)
   wagon.changeDate()
   wagon.weatherType()
+  wagon.eat()
   wagon.move()
+  if wagon.distance == 0:
+    Oregon(wagon, leader, personOne, personTwo, personThree, personFour)
   wagon.healthLevel(leader, personOne, personTwo, personThree, personFour)
   travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour)
 
@@ -53,7 +55,24 @@ def trailMoving(wagon, leader, personOne, personTwo, personThree, personFour):
 def trailResting(wagon, leader, personOne, personTwo, personThree, personFour):
   print("\033c")
   wagon.changeDate()
+  wagon.weatherType()
+  wagon.eat()
+  leader.lifeIncrease(wagon)
+  personOne.lifeIncrease(wagon)
+  personTwo.lifeIncrease(wagon)
+  personThree.lifeIncrease(wagon)
+  personFour.lifeIncrease(wagon)
+  wagon.healthLevel(leader, personOne, personTwo, personThree, personFour)
+  travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour)
 
+#This function will play at the end of the game when the user reaches Oregon. I know the words are not 
+#correctly spelled. It was from the old ending of Ghostbusters for the NES. 
+def Oregon(wagon, leader, personOne, personTwo, personThree, personFour):
+  print("\033c")
+  print("You have reached Oregon!")
+  print("Conglaturation!!!")
+  print("You have completed a Great Game!")
+  print("Now go and rest our Heroes!")
 
 ### Trail Menu and its Functions below ###
 
@@ -86,12 +105,12 @@ def trailMenu(wagon, leader, personOne, personTwo, personThree, personFour):
 def checkSupplies(wagon, leader, personOne, personTwo, personThree, personFour):
   print("\033c")
   print("You have the following supplies on hand: ")
-  print(wagon.oxen)
-  print(wagon.food)
-  print(wagon.cloth)
-  print(wagon.wheel)
-  print(wagon.axle)
-  print(wagon.tongue)
+  print("Oxen: ", wagon.oxen)
+  print("Food: ", wagon.food)
+  print("Cloth: ", wagon.cloth)
+  print("Wheel: ", wagon.wheel)
+  print("Axle: ", wagon.axle)
+  print("Tongue: ", wagon.tongue)
   input("Press enter to return to the menu!")
   travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour)
 
