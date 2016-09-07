@@ -16,6 +16,7 @@ def travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour
   print("Health:", wagon.health)
   print("Pace: ", wagon.speed, "MPH")
   print("Ration Level: ", wagon.ration)
+  print("Food amount: ", wagon.food)
   print("Distance: ", wagon.distance)
   print(leader.life)
   print("1. Travel the trail")
