@@ -16,6 +16,7 @@ def travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour
   print("Ration Level: ", wagon.ration)
   print("Food amount: ", wagon.food)
   print("Distance: ", wagon.distance)
+  print(leader.life)
   print("1. Travel the trail")
   print("2. Stop to rest")
   print("3. More options.")
@@ -23,15 +24,17 @@ def travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour
   while not travellingTrailValid(choice):
     print("Invalid Selection!")
     choice = int(input("What is your choice? "))
-  if wagon.distance > 0:
+  if wagon.distance > 0 and leader.life > 0:
     if choice == 1:
       trailMoving(wagon, leader, personOne, personTwo, personThree, personFour)
     elif choice == 2:
       trailResting(wagon, leader, personOne, personTwo, personThree, personFour)
     elif choice == 3: 
       trailMenu(wagon, leader, personOne, personTwo, personThree, personFour)
-  else:
+  elif wagon.distance <= 0:
     Oregon(wagon, leader, personOne, personTwo, personThree, personFour)
+  elif leader.life <= 0:
+    died(wagon, leader, personOne, personTwo, personThree, personFour)
 
 #This function will actually change all of the factors when the wagon is moving. The Weather type, distance 
 #travelled, wagon speed, pace, ration level, and overall health are all calculated by this one function. 
@@ -72,7 +75,16 @@ def Oregon(wagon, leader, personOne, personTwo, personThree, personFour):
   print("Conglaturation!!!")
   print("You have completed a Great Game!")
   print("Now go and rest our Heroes!")
-  input("Press Enter to continue!")
+  input("Press Enter to exit!")
+
+#This function will execute when the party has died. 
+def died(wagon, leader, personOne, personTwo, personThree, personFour):
+  print("\033c")
+  print("It is a sad day")
+  print(leader.name + " has died!")
+  print("Your journey to Oregon is over!")
+  print("May you return to the soil from which you came...")
+  input("Press Enter to exit!")
 
 ### Trail Menu and its Functions below ###
 
