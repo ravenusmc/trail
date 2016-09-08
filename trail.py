@@ -16,7 +16,6 @@ def travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour
   print("Ration Level: ", wagon.ration)
   print("Food amount: ", wagon.food)
   print("Distance: ", wagon.distance)
-  print(leader.life)
   print("1. Travel the trail")
   print("2. Stop to rest")
   print("3. More options.")
