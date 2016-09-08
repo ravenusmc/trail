@@ -96,6 +96,7 @@ def trailMenu(wagon, leader, personOne, personTwo, personThree, personFour):
   print("3. Change Pace")
   print("4. Change food rations")
   print("5. Buy Supplies")
+  print("6. Hunt!")
   choice = int(input("What is your choice? "))
   while not trailMenuValid(choice):
     print("That was not a valid selection!")
@@ -110,6 +111,8 @@ def trailMenu(wagon, leader, personOne, personTwo, personThree, personFour):
     changeFood(wagon, leader, personOne, personTwo, personThree, personFour)
   elif choice == 5:
     buySupplies(wagon, leader, personOne, personTwo, personThree, personFour)
+  elif choice == 6:
+    hunt(wagon, leader, personOne, personTwo, personThree, personFour)
 
 
 #This function takes the user to the supplies screen where they can see the level of their supplies. 
@@ -193,6 +196,11 @@ def buySupplies(wagon, leader, personOne, personTwo, personThree, personFour):
     print("Sorry no Merchant is around!")
   input("Press enter to return to the menu!")
   travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour)
+
+#This will be my hunting function. It will not take the user to a screen where one shoots animals. Instead, 
+#It will be a number guessing game where if you guess the number you reward will be randomly generated. 
+def hunt(wagon, leader, personOne, personTwo, personThree, personFour):
+  print("\033c")
 
 
 
