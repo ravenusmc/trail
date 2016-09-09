@@ -1,5 +1,6 @@
 from valid import *
 from merchant import *
+from huntClass import *
 import datetime
 import random
 #I am using pandas to convert my date. I spent about two weeks slowly researching how to take a date
@@ -201,6 +202,9 @@ def buySupplies(wagon, leader, personOne, personTwo, personThree, personFour):
 #It will be a number guessing game where if you guess the number you reward will be randomly generated. 
 def hunt(wagon, leader, personOne, personTwo, personThree, personFour):
   print("\033c")
+  hunt = Hunt()
+  hunt.welcome()
+  travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour)
 
 
 
