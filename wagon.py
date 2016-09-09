@@ -1,6 +1,7 @@
 import random 
 import pandas as pd
 
+
 #This is where the wagon class will be. 
 class Wagon():
 

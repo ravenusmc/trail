@@ -204,6 +204,7 @@ def hunt(wagon, leader, personOne, personTwo, personThree, personFour):
   print("\033c")
   hunt = Hunt()
   hunt.welcome()
+  hunt.hunting(wagon)
   travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour)
 
 
