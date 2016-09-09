@@ -19,7 +19,7 @@ def monthValid(choice):
 
 ## Validations for the store file. 
 def storemainValid(choice):
-  if choice == 1 or choice == 2 or choice == 3 or choice == 4 or choice == 5:
+  if choice == 1 or choice == 2 or choice == 3 or choice == 4 or choice == 5 or choice == 6:
     return True
   else: 
     return False 
@@ -59,6 +59,12 @@ def tongueValid(tongue):
     return False
   else: 
     return True
+
+def bulletValid(bulletNumber):
+  if bulletNumber < 0:
+    return False
+  else:
+    return True 
 
 ## Validations for the trail file.
 

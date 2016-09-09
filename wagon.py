@@ -11,11 +11,12 @@ class Wagon():
     self.weather = weather
     self.month = month 
     self.oxen = 0
-    self.food = 100
+    self.food = 0
     self.cloth = 0
     self.wheel = 0
     self.axle = 0
     self.tongue = 0
+    self.bullets = 0
     self.speed = 0
     self.distance = 2000
   

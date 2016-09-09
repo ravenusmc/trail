@@ -126,6 +126,7 @@ def checkSupplies(wagon, leader, personOne, personTwo, personThree, personFour):
   print("Wheel: ", wagon.wheel)
   print("Axle: ", wagon.axle)
   print("Tongue: ", wagon.tongue)
+  print("bullets: ", wagon.bullets)
   input("Press enter to return to the menu!")
   travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour)
 

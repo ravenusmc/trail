@@ -1,6 +1,6 @@
 import random 
 
-#have to add bullet option to store!
+
 
 class Hunt():
 
@@ -18,10 +18,13 @@ class Hunt():
     while guess != targetNumber:
       if guess > targetNumber:
         print("You missed, shot to high!")
+        wagon.bullets -= 1
       elif guess < targetNumber:
         print("You missed, shot to low!")
+        wagon.bullets -= 1
       guess = int(input("Please guess a number between 1 and 20: "))
     print("You guessed the number!")
+    wagon.bullets -= 1
     if targetNumber > 18:
       print("You killed a bison!")
       print("Food increased by 50!")

@@ -3,7 +3,7 @@ from trail import *
 from pygame import mixer
 
 #This is the initial store greeting function. The user will learn here what they can buy. 
-def storeGreeting(wagon, leader, personOne, personTwo, personThree, personFour, oxenTotal, foodTotal, clothTotal, spareTotal):
+def storeGreeting(wagon, leader, personOne, personTwo, personThree, personFour, oxenTotal, foodTotal, clothTotal, spareTotal, bulletsTotal):
   print("\033c")
   print("{__________________________________}")
   print("Hello, I am Daniel.")
@@ -13,17 +13,18 @@ def storeGreeting(wagon, leader, personOne, personTwo, personThree, personFour, 
   print(" - Plenty of food for the trip")
   print(" - Spare parts for your wagon")
   input("Press enter to continue ")
-  storeMain(wagon, leader, personOne, personTwo, personThree, personFour, oxenTotal, foodTotal, clothTotal, spareTotal)
+  storeMain(wagon, leader, personOne, personTwo, personThree, personFour, oxenTotal, foodTotal, clothTotal, spareTotal, bulletsTotal)
 
 #This is the main menu screen which will keep track of all of the supplies that the player buys.
-def storeMain(wagon, leader, personOne, personTwo, personThree, personFour, oxenTotal, foodTotal, clothTotal, spareTotal):
+def storeMain(wagon, leader, personOne, personTwo, personThree, personFour, oxenTotal, foodTotal, clothTotal, spareTotal, bulletsTotal):
   storeGreeter()
   print("1. Oxen $" + str(oxenTotal))
   print("2. Food $" + str(foodTotal))
   print("3. Clothing $" + str(clothTotal))
   print("4. Spare Parts $" + str(spareTotal))
-  print("5. Start Your Journey!")
-  leader.money = leader.money - (oxenTotal + foodTotal + clothTotal + spareTotal)
+  print("5. Bullets $" + str(bulletsTotal))
+  print("6. Start Your Journey!")
+  leader.money = leader.money - (oxenTotal + foodTotal + clothTotal + spareTotal + bulletsTotal)
   print("Amount you have: $" + str(leader.money))
   choice = int(input("Which item would you like to buy? "))
   while not storemainValid(choice):
@@ -33,15 +34,15 @@ def storeMain(wagon, leader, personOne, personTwo, personThree, personFour, oxen
     yokeNumber = oxenTotal / 40
     wagon.oxen = int(yokeNumber * 2)
     wagon.speed = yokeNumber * 5 
-    storeMain(wagon, leader, personOne, personTwo, personThree, personFour, oxenTotal, foodTotal, clothTotal, spareTotal)
+    storeMain(wagon, leader, personOne, personTwo, personThree, personFour, oxenTotal, foodTotal, clothTotal, spareTotal, bulletsTotal)
   elif choice == 2:
     foodTotal = food()
     wagon.food = foodTotal / .20
-    storeMain(wagon, leader, personOne, personTwo, personThree, personFour, oxenTotal, foodTotal, clothTotal, spareTotal)
+    storeMain(wagon, leader, personOne, personTwo, personThree, personFour, oxenTotal, foodTotal, clothTotal, spareTotal, bulletsTotal)
   elif choice == 3:
     clothTotal = cloth()
     wagon.cloth = clothTotal / 10
-    storeMain(wagon, leader, personOne, personTwo, personThree, personFour, oxenTotal, foodTotal, clothTotal, spareTotal)
+    storeMain(wagon, leader, personOne, personTwo, personThree, personFour, oxenTotal, foodTotal, clothTotal, spareTotal, bulletsTotal)
   elif choice == 4:
     wheelTotal = wheelSpare()
     wagon.wheel = wheelTotal / 10
@@ -50,8 +51,12 @@ def storeMain(wagon, leader, personOne, personTwo, personThree, personFour, oxen
     tongueTotal = tongueSpare()
     wagon.tongue = tongueTotal / 10
     spareTotal = wheelTotal + axleTotal + tongueTotal
-    storeMain(wagon, leader, personOne, personTwo, personThree, personFour, oxenTotal, foodTotal, clothTotal, spareTotal)
+    storeMain(wagon, leader, personOne, personTwo, personThree, personFour, oxenTotal, foodTotal, clothTotal, spareTotal, bulletsTotal)
   elif choice == 5:
+    bulletsTotal = bullet()
+    wagon.bullets = bulletsTotal / 2 
+    storeMain(wagon, leader, personOne, personTwo, personThree, personFour, oxenTotal, foodTotal, clothTotal, spareTotal, bulletsTotal)
+  elif choice == 6:
     goodLuckScreen(wagon, leader, personOne, personTwo, personThree, personFour)
 
 #This is the function that takes you to buy the required number of oxen for your journey.
@@ -124,6 +129,18 @@ def tongueSpare():
     tongue = int(input("How many wagon tongue's? "))
   tongueTotal = tongue * 10 
   return tongueTotal
+
+def bullet():
+  storeGreeter()
+  print("I sell ammunition in boxes of 20 bullets.")
+  print("Each box costs $2.00")
+  bulletNumber = int(input("How many boxes do you want: "))
+  while not bulletValid(bulletNumber):
+    print("Value must be 0 or greater!")
+    bulletNumber = int(input("How many boxes do you want"))
+  bulletTotal = bulletNumber * 2
+  return bulletTotal
+
 
 #A brief screen that will tell the player good luck once they exit the store. 
 def goodLuckScreen(wagon, leader, personOne, personTwo, personThree, personFour):

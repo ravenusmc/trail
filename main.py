@@ -102,8 +102,9 @@ def monthSelection(leader, personOne, personTwo, personThree, personFour):
   foodTotal = 0.00
   clothTotal = 0.00
   spareTotal = 0.00
+  bulletsTotal = 0.00
   wagon = Wagon("Normal", "Good", "Sunny", month)
-  storeGreeting(wagon, leader, personOne, personTwo, personThree, personFour, oxenTotal, foodTotal, clothTotal, spareTotal)
+  storeGreeting(wagon, leader, personOne, personTwo, personThree, personFour, oxenTotal, foodTotal, clothTotal, spareTotal, bulletsTotal)
 
 ####### NON ESSENTIAL FUNCTIONS HERE ##########
 
