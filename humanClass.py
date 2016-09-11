@@ -69,10 +69,16 @@ class Human():
       print(self.name + " is disease free!")
       input("Hit Enter to continue!")
 
+  def die(self):
+    if self.life == 0:
+      print(self.name + " has died!")
+      self.alive == False
 
 
-# mike = Human("Mike", "Banker")
+
+mike = Human("Mike", "Banker")
 # beth = Human("Beth", "Cook")
+mike.die()
 # print(mike.infected)
 # print(beth.infected)
 # mike.diseaseInfection()
