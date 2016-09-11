@@ -40,6 +40,7 @@ def travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour
 #travelled, wagon speed, pace, ration level, and overall health are all calculated by this one function. 
 def trailMoving(wagon, leader, personOne, personTwo, personThree, personFour):
   print("\033c")
+  #I wonder if there is a way to combine all of these objects into one?
   leader.lifeDrop(wagon)
   personOne.lifeDrop(wagon)
   personTwo.lifeDrop(wagon)

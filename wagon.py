@@ -5,11 +5,15 @@ import pandas as pd
 #This is where the wagon class will be. 
 class Wagon():
 
+  #One weird variable here may be wagonStructure. This variable is a boolean variable which will if set to 
+  #true means the wagon can move. If it is set to false the wagon cannot move. 
   def __init__(self, ration, health, weather, month):
     self.ration = ration
     self.health = health 
     self.weather = weather
     self.month = month 
+    self.moving = False
+    self.wagonStructure = True 
     self.oxen = 0
     self.food = 0
     self.cloth = 0
@@ -34,10 +38,12 @@ class Wagon():
 
   #This method will keep track of the speed and subtract that number from the distance each day. 
   def move(self):
-    self.speed = 2.5 * self.oxen
-    self.distance -= self.speed 
-    if self.distance == 0:
-        print("You have reached Oregon!")
+    if wagonStructure == True:
+      self.speed = 2.5 * self.oxen
+      self.distance -= self.speed 
+      self.moving = True 
+      if self.distance == 0:
+          print("You have reached Oregon!")
 
   #This will affect the amount of food eating by the ration level. I decided to place this method here 
   #and not in the human class becuase one cannot change the individual ration levels-as of now. Thus, 
@@ -65,6 +71,18 @@ class Wagon():
   def changeDate(self):
     startdate = self.month
     self.month = pd.to_datetime(startdate) + pd.DateOffset(days=1)
+
+  #This method will determine if a wheel breaks and then asks the player if they want to fix it. 
+  def wagonWheel(self):
+    wheelBreak = random.randint(1,100)
+    if wheelBreak > 75:
+      print("A wagon wheel has broken!")
+      self.wagonStructure == False
+      fix = input("Do you want to fix it? (y/n): ")
+      if fix == "y" and self.wheel > 0:
+        print("You fixed the wagon wheel!")
+        self.wheel -= 1
+        self.wagonStructure == True 
 
 # month = "3/1/1848"
 # wagon = Wagon("Meager", "Good", "Sunny", month)
