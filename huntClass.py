@@ -13,7 +13,6 @@ class Hunt():
 
   def hunting(self, wagon):
     targetNumber = random.randint(1,20)
-    print(targetNumber)
     guess = int(input("Please guess a number between 1 and 20: "))
     while guess != targetNumber:
       if guess > targetNumber:

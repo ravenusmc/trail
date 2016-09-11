@@ -42,11 +42,11 @@ class Human():
 
   #This method will assign a disease to an individual at a random point.
   def diseaseInfection(self):
-    diseaseChance = random.randint(1, 30)
+    diseaseChance = random.randint(1, 100)
     diseases = ["typhoid", "Yellow Fever", "cholera"]
     diseaseName = random.randint(0,2)
 
-    if diseaseChance > 25 and self.infected == False and self.alive == True:
+    if diseaseChance > 85 and self.infected == False and self.alive == True:
       disease = diseases[diseaseName]
       self.infected = True 
       print(self.name + " has been infected with: " + disease )
@@ -69,6 +69,8 @@ class Human():
       print(self.name + " is disease free!")
       input("Hit Enter to continue!")
 
+  #This method will be what kills off a human. It works by checking to see if self.life is 0. If it is
+  #self.alive is set to False. 
   def die(self):
     if self.life == 0:
       print(self.name + " has died!")
@@ -76,9 +78,9 @@ class Human():
 
 
 
-mike = Human("Mike", "Banker")
+# mike = Human("Mike", "Banker")
 # beth = Human("Beth", "Cook")
-mike.die()
+# mike.die()
 # print(mike.infected)
 # print(beth.infected)
 # mike.diseaseInfection()
