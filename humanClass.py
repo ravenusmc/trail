@@ -46,7 +46,7 @@ class Human():
     diseases = ["typhoid", "Yellow Fever", "cholera"]
     diseaseName = random.randint(0,2)
 
-    if diseaseChance > 85 and self.infected == False and self.alive == True:
+    if diseaseChance > 90 and self.infected == False and self.alive == True:
       disease = diseases[diseaseName]
       self.infected = True 
       print(self.name + " has been infected with: " + disease )

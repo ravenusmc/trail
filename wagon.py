@@ -38,7 +38,7 @@ class Wagon():
 
   #This method will keep track of the speed and subtract that number from the distance each day. 
   def move(self):
-    if wagonStructure == True:
+    if self.wagonStructure == True:
       self.speed = 2.5 * self.oxen
       self.distance -= self.speed 
       self.moving = True 
@@ -87,7 +87,7 @@ class Wagon():
   #This method will determine if an axle breaks and then asks the player if they want to fix it. 
   def wagonAxle(self):
     wheelaxle = random.randint(1,100)
-    if wheelBreak > 75:
+    if wheelaxle > 80:
       print("A wagon axle has broken!")
       print("You will not be able to move until it is fixed!")
       self.wagonStructure == False
@@ -100,7 +100,7 @@ class Wagon():
   #This method will determine if a tongue breaks and then asks the player if they want to fix it. 
   def wagonTongue(self):
     wheelTongue = random.randint(1,100)
-    if wheelBreak > 75:
+    if wheelTongue > 95:
       print("A wagon tongue has broken!")
       print("You will not be able to move until it is fixed!")
       self.wagonStructure == False
@@ -110,11 +110,9 @@ class Wagon():
         self.tongue -= 1
         self.wagonStructure == True
 
-# month = "3/1/1848"
-# wagon = Wagon("Meager", "Good", "Sunny", month)
-# print(wagon.food)
-# wagon.eat()
-# print(wagon.food)
+month = "3/1/1848"
+wagon = Wagon("Meager", "Good", "Sunny", month)
+wagon.wagonWheel()
 
 
 
