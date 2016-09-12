@@ -84,6 +84,32 @@ class Wagon():
         self.wheel -= 1
         self.wagonStructure == True 
 
+  #This method will determine if an axle breaks and then asks the player if they want to fix it. 
+  def wagonAxle(self):
+    wheelaxle = random.randint(1,100)
+    if wheelBreak > 75:
+      print("A wagon axle has broken!")
+      print("You will not be able to move until it is fixed!")
+      self.wagonStructure == False
+      fix = input("Do you want to fix it? (y/n): ")
+      if fix == "y" and self.axle > 0:
+        print("You fixed the wagon axle!")
+        self.axle -= 1
+        self.wagonStructure == True
+
+  #This method will determine if a tongue breaks and then asks the player if they want to fix it. 
+  def wagonTongue(self):
+    wheelTongue = random.randint(1,100)
+    if wheelBreak > 75:
+      print("A wagon tongue has broken!")
+      print("You will not be able to move until it is fixed!")
+      self.wagonStructure == False
+      fix = input("Do you want to fix it? (y/n): ")
+      if fix == "y" and self.tongue > 0:
+        print("You fixed the wagon axle!")
+        self.tongue -= 1
+        self.wagonStructure == True
+
 # month = "3/1/1848"
 # wagon = Wagon("Meager", "Good", "Sunny", month)
 # print(wagon.food)
