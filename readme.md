@@ -6,4 +6,4 @@ This is a project where I will try to build a text based version of the Oregon T
 # Getting started
 ### Installing 
 
-  As of now, nothing extra is needed to use this program other than Python 3.4 or simply Python 3.X. 
+  Other than Python 3.4 or simply Python 3.X you will also need pandas installed on your computer.
