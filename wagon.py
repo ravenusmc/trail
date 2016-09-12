@@ -110,9 +110,9 @@ class Wagon():
         self.tongue -= 1
         self.wagonStructure == True
 
-month = "3/1/1848"
-wagon = Wagon("Meager", "Good", "Sunny", month)
-wagon.wagonWheel()
+# month = "3/1/1848"
+# wagon = Wagon("Meager", "Good", "Sunny", month)
+# wagon.wagonWheel()
 
 
 

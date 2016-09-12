@@ -66,6 +66,8 @@ class Human():
   def rest(self):
     healthyChance = random.randint(1,10)
     if self.infected == True and healthyChance < 5 and self.alive == True: 
+      self.infected = False 
+      self.life += 1
       print(self.name + " is disease free!")
       input("Hit Enter to continue!")
 
@@ -74,20 +76,18 @@ class Human():
   def die(self):
     if self.life == 0:
       print(self.name + " has died!")
-      self.alive == False
+      self.alive = False
 
 
 
-# mike = Human("Mike", "Banker")
-# beth = Human("Beth", "Cook")
-# mike.die()
-# print(mike.infected)
-# print(beth.infected)
-# mike.diseaseInfection()
+mike = Human("Mike", "Banker")
+beth = Human("Beth", "Cook")
+
+
 # beth.diseaseInfection()
 # print(mike.infected)
 # print(beth.infected)
-# mike.diseaseKilling()
+
 # beth.diseaseKilling()
 # print(mike.infected)
 # print(beth.infected)
