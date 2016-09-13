@@ -114,6 +114,11 @@ class Wagon():
   #Gets worn out on the journey.
   def clothingWorn(self):
     self.cloth -= .1
+    if self.cloth < .5: 
+      print("You are low on clothes!")
+      #print("Better get new ones soon or you will die!")
+
+
 
 
 # month = "3/1/1848"
