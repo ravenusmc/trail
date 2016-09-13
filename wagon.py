@@ -110,6 +110,12 @@ class Wagon():
         self.tongue -= 1
         self.wagonStructure == True
 
+  #This method is kind of pointless. Not sure what I would do with clothing. Other than the fact that it 
+  #Gets worn out on the journey.
+  def clothingWorn(self):
+    self.cloth -= .1
+
+
 # month = "3/1/1848"
 # wagon = Wagon("Meager", "Good", "Sunny", month)
 # wagon.wagonWheel()

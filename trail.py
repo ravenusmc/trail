@@ -64,6 +64,7 @@ def trailMoving(wagon, leader, personOne, personTwo, personThree, personFour):
   wagon.changeDate()
   wagon.weatherType()
   wagon.eat()
+  wagon.clothingWorn()
   wagon.move()
   wagon.healthLevel(leader, personOne, personTwo, personThree, personFour)
   travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour)
@@ -85,6 +86,7 @@ def trailResting(wagon, leader, personOne, personTwo, personThree, personFour):
   personTwo.rest()
   personThree.rest()
   personFour.rest()
+  wagon.clothingWorn()
   wagon.healthLevel(leader, personOne, personTwo, personThree, personFour)
   travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour)
 
