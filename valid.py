@@ -98,6 +98,12 @@ def changeFoodValid(choice):
   else: 
     return False
 
+def riverAheadValid(option):
+  if choice == 1 or choice == 2:
+    return True 
+  else:
+    return False
+
 ## Validations for the merchant class. 
 
 def merchantClassValid(choice):

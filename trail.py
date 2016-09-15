@@ -1,6 +1,7 @@
 from valid import *
 from merchant import *
 from huntClass import *
+from river import *
 import datetime
 import random
 #I am using pandas to convert my date. I spent about two weeks slowly researching how to take a date
@@ -68,6 +69,7 @@ def trailMoving(wagon, leader, personOne, personTwo, personThree, personFour):
   wagon.wagonWheel()
   wagon.wagonAxle()
   wagon.wagonTongue()
+  riverAhead(wagon, leader, personOne, personTwo, personThree, personFour)
   wagon.move()
   wagon.healthLevel(leader, personOne, personTwo, personThree, personFour)
   travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour)
@@ -233,6 +235,20 @@ def hunt(wagon, leader, personOne, personTwo, personThree, personFour):
   hunt.welcome()
   hunt.hunting(wagon)
   travellingTrail(wagon, leader, personOne, personTwo, personThree, personFour)
+
+#Creating a river crossing function. 
+def riverAhead(wagon, leader, personOne, personTwo, personThree, personFour):
+  riverChance = random.randint(1,200)
+  if riverChance >= 1:
+    river = River()
+    print("The wagon has come upon a river")
+    print("1. Cross the river")
+    print("2. Try to look for a shallow place to cross")
+    option = int(input("What would you like to do? "))
+    while not riverAheadValid(option):
+      
+    if option == 1:
+      river.crossRiver(wagon, leader, personOne, personTwo, personThree, personFour)
 
 
 

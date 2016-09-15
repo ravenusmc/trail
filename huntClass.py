@@ -1,7 +1,5 @@
 import random 
 
-
-
 class Hunt():
 
   def welcome(self):
