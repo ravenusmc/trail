@@ -75,7 +75,7 @@ class Wagon():
   #This method will determine if a wheel breaks and then asks the player if they want to fix it. 
   def wagonWheel(self):
     wheelBreak = random.randint(1,100)
-    if wheelBreak > 75:
+    if wheelBreak > 85:
       print("A wagon wheel has broken!")
       self.wagonStructure == False
       fix = input("Do you want to fix it? (y/n): ")
@@ -87,7 +87,7 @@ class Wagon():
   #This method will determine if an axle breaks and then asks the player if they want to fix it. 
   def wagonAxle(self):
     wheelaxle = random.randint(1,100)
-    if wheelaxle > 80:
+    if wheelaxle > 90:
       print("A wagon axle has broken!")
       print("You will not be able to move until it is fixed!")
       self.wagonStructure == False
