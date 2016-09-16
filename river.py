@@ -31,5 +31,7 @@ class River():
     input("Press enter to continue!")
 
 
-  def shallowCrossPoint(self, wagon, leader, personOne, personTwo, personThree, personFour):
-    print("shallow")
+  def shallowCrossPoint(self):
+    print("You safely cross the river!")
+    print("No one got hurt or died in the crossing")
+    input("Press enter to continue!")

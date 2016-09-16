@@ -238,17 +238,29 @@ def hunt(wagon, leader, personOne, personTwo, personThree, personFour):
 
 #Creating a river crossing function. 
 def riverAhead(wagon, leader, personOne, personTwo, personThree, personFour):
+  print("\033c")
   riverChance = random.randint(1,200)
-  if riverChance >= 1:
+  shallowCrossPointChance = random.randint(1,200)
+  if riverChance >= 175:
     river = River()
     print("The wagon has come upon a river")
     print("1. Cross the river")
     print("2. Try to look for a shallow place to cross")
     option = int(input("What would you like to do? "))
     while not riverAheadValid(option):
-      
+      print("That is not a valid option!")
+      option = int(input("What would you like to do? ")) 
     if option == 1:
       river.crossRiver(wagon, leader, personOne, personTwo, personThree, personFour)
+    elif option == 2 and shallowCrossPointChance >= 50:
+      river.shallowCrossPoint()
+    elif option == 2 and shallowCrossPointChance < 50:
+      print("Sorry no cross point!")
+      print("You now HAVE to cross the river by fording!")
+      input("Please enter to continue!")
+      river.crossRiver(wagon, leader, personOne, personTwo, personThree, personFour)
+
+
 
 
 

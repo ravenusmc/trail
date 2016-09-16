@@ -99,7 +99,7 @@ def changeFoodValid(choice):
     return False
 
 def riverAheadValid(option):
-  if choice == 1 or choice == 2:
+  if option == 1 or option == 2:
     return True 
   else:
     return False
