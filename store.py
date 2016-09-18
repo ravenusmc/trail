@@ -25,6 +25,10 @@ def storeMain(wagon, leader, personOne, personTwo, personThree, personFour, oxen
   print("5. Bullets $" + str(bulletsTotal))
   print("6. Start Your Journey!")
   leader.money = leader.money - (oxenTotal + foodTotal + clothTotal + spareTotal + bulletsTotal)
+  if leadermoney < 0:
+    print("You have run out of money!")
+    input("You will now start your journey")
+    goodLuckScreen(wagon, leader, personOne, personTwo, personThree, personFour)
   print("Amount you have: $" + str(leader.money))
   choice = int(input("Which item would you like to buy? "))
   while not storemainValid(choice):
@@ -54,7 +58,7 @@ def storeMain(wagon, leader, personOne, personTwo, personThree, personFour, oxen
     storeMain(wagon, leader, personOne, personTwo, personThree, personFour, oxenTotal, foodTotal, clothTotal, spareTotal, bulletsTotal)
   elif choice == 5:
     bulletsTotal = bullet()
-    wagon.bullets = bulletsTotal / 20 
+    wagon.bullets = bulletsTotal * 10
     storeMain(wagon, leader, personOne, personTwo, personThree, personFour, oxenTotal, foodTotal, clothTotal, spareTotal, bulletsTotal)
   elif choice == 6:
     goodLuckScreen(wagon, leader, personOne, personTwo, personThree, personFour)
@@ -138,7 +142,7 @@ def bullet():
   while not bulletValid(bulletNumber):
     print("Value must be 0 or greater!")
     bulletNumber = int(input("How many boxes do you want"))
-  bulletTotal = bulletNumber * 20
+  bulletTotal = bulletNumber * 2
   return bulletTotal
 
 
