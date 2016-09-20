@@ -78,7 +78,7 @@ class Wagon():
     if wheelBreak > 85:
       print("A wagon wheel has broken!")
       self.wagonStructure == False
-      print("Wheel: " + wagon.wheel)
+      print("Wheel: " + str(self.wheel))
       fix = input("Do you want to fix it? (y/n): ")
       if fix == "y" and self.wheel > 0:
         print("You fixed the wagon wheel!")
@@ -92,7 +92,7 @@ class Wagon():
       print("A wagon axle has broken!")
       print("You will not be able to move until it is fixed!")
       self.wagonStructure == False
-      print("Axles: " + wagon.axle)
+      print("Axles: " + str(self.axle))
       fix = input("Do you want to fix it? (y/n): ")
       if fix == "y" and self.axle > 0:
         print("You fixed the wagon axle!")
@@ -106,7 +106,7 @@ class Wagon():
       print("A wagon tongue has broken!")
       print("You will not be able to move until it is fixed!")
       self.wagonStructure == False
-      print("Tongues: " + wagon.tongue)
+      print("Tongues: " + str(self.tongue))
       fix = input("Do you want to fix it? (y/n): ")
       if fix == "y" and self.tongue > 0:
         print("You fixed the wagon axle!")
@@ -121,12 +121,6 @@ class Wagon():
       print("You are low on clothes!")
       #print("Better get new ones soon or you will die!")
 
-
-
-
-# month = "3/1/1848"
-# wagon = Wagon("Meager", "Good", "Sunny", month)
-# wagon.wagonWheel()
 
 
 

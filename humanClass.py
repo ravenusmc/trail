@@ -42,11 +42,11 @@ class Human():
 
   #This method will assign a disease to an individual at a random point.
   def diseaseInfection(self):
-    diseaseChance = random.randint(1, 100)
+    diseaseChance = random.randint(1, 300)
     diseases = ["typhoid", "Yellow Fever", "cholera"]
     diseaseName = random.randint(0,2)
 
-    if diseaseChance > 90 and self.infected == False and self.alive == True:
+    if diseaseChance > 275 and self.infected == False and self.alive == True:
       disease = diseases[diseaseName]
       self.infected = True 
       print(self.name + " has been infected with: " + disease )

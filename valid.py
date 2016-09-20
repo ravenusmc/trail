@@ -113,10 +113,10 @@ def merchantClassValid(choice):
     return False 
 
 def merchantPriceValid(amount):
-  if amount < 0:
-    return False
+  if amount >= 0:
+    return True
   else:
-    return True 
+    return False
 
 
 

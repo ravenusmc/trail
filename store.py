@@ -25,7 +25,7 @@ def storeMain(wagon, leader, personOne, personTwo, personThree, personFour, oxen
   print("5. Bullets $" + str(bulletsTotal))
   print("6. Start Your Journey!")
   leader.money = leader.money - (oxenTotal + foodTotal + clothTotal + spareTotal + bulletsTotal)
-  if leadermoney < 0:
+  if leader.money < 0:
     print("You have run out of money!")
     input("You will now start your journey")
     goodLuckScreen(wagon, leader, personOne, personTwo, personThree, personFour)
